@@ -1,3 +1,4 @@
+
 c-<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,13 +26,138 @@ c-<!DOCTYPE html>
             --shadow-hover: rgba(0, 0, 0, 0.2);
         }
 
-        body.dark-mode {
-            --primary-bg: #1a1a1a;
-            --secondary-bg: #2a2a2a;
+body.dark-mode {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
             --text-primary: #ffffff;
             --text-secondary: #b0b0b0;
-            --shadow: rgba(255, 255, 255, 0.05);
-            --shadow-hover: rgba(255, 255, 255, 0.1);
+            --shadow: rgba(255, 107, 53, 0.15);
+            --shadow-hover: rgba(255, 107, 53, 0.35);
+            --neon-glow: 0 0 20px rgba(255, 107, 53, 0.5), 0 0 40px rgba(255, 107, 53, 0.3);
+            --neon-glow-strong: 0 0 30px rgba(255, 107, 53, 0.8), 0 0 60px rgba(255, 107, 53, 0.5), 0 0 90px rgba(255, 107, 53, 0.3);
+        }
+
+        body.dark-mode nav {
+            box-shadow: 0 2px 30px rgba(255, 107, 53, 0.2);
+            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+        }
+
+        body.dark-mode nav.scrolled {
+            box-shadow: 0 2px 40px rgba(255, 107, 53, 0.4);
+        }
+
+        body.dark-mode .logo {
+            text-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+        }
+
+        body.dark-mode .nav-links a:hover {
+            text-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+        }
+
+        body.dark-mode .hero h1 {
+            text-shadow: var(--neon-glow);
+        }
+
+        body.dark-mode .cta-button {
+            box-shadow: var(--neon-glow-strong);
+        }
+
+        body.dark-mode .cta-button:hover {
+            box-shadow: 0 0 40px rgba(255, 107, 53, 1), 0 0 80px rgba(255, 107, 53, 0.6), 0 0 120px rgba(255, 107, 53, 0.4);
+        }
+
+        body.dark-mode .profile-image {
+            box-shadow: var(--neon-glow-strong);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        body.dark-mode .profile-image:hover {
+            box-shadow: 0 0 40px rgba(255, 107, 53, 1), 0 0 80px rgba(255, 107, 53, 0.6);
+            border-color: rgba(255, 107, 53, 0.6);
+        }
+
+        body.dark-mode .skill-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.15);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        body.dark-mode .skill-card:hover {
+            box-shadow: var(--neon-glow-strong);
+            border-color: rgba(255, 107, 53, 0.5);
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        body.dark-mode .project-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.2);
+            border: 1px solid rgba(255, 107, 53, 0.15);
+        }
+
+        body.dark-mode .project-card:hover {
+            box-shadow: var(--neon-glow-strong);
+            border-color: rgba(255, 107, 53, 0.6);
+        }
+
+        body.dark-mode .project-button:hover {
+            box-shadow: 0 0 25px rgba(255, 107, 53, 0.8);
+        }
+
+        body.dark-mode .achievement-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.15);
+            border: 1px solid rgba(255, 107, 53, 0.1);
+        }
+
+        body.dark-mode .achievement-card:hover {
+            box-shadow: var(--neon-glow);
+            border-color: rgba(255, 107, 53, 0.4);
+            transform: translateY(-5px);
+        }
+
+        body.dark-mode .timeline-content {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.2);
+            border: 1px solid rgba(255, 107, 53, 0.15);
+        }
+
+        body.dark-mode .timeline-content:hover {
+            box-shadow: var(--neon-glow-strong);
+            border-color: rgba(255, 107, 53, 0.5);
+        }
+
+        body.dark-mode .timeline-icon {
+            box-shadow: var(--neon-glow-strong);
+            border: 2px solid rgba(255, 107, 53, 0.3);
+        }
+
+        body.dark-mode .business-card {
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            box-shadow: var(--neon-glow-strong);
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        body.dark-mode .contact-item {
+            border: 1px solid rgba(255, 107, 53, 0.2);
+            background: rgba(255, 107, 53, 0.05);
+        }
+
+        body.dark-mode .contact-item:hover {
+            box-shadow: var(--neon-glow);
+            border-color: rgba(255, 107, 53, 0.5);
+            background: rgba(255, 107, 53, 0.1);
+        }
+
+        body.dark-mode .section-title::after {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+        }
+
+        body.dark-mode .circle {
+            opacity: 0.15;
+        }
+
+        body.dark-mode footer {
+            border-top: 1px solid rgba(255, 107, 53, 0.2);
         }
 
         body {
