@@ -168,6 +168,372 @@ body.dark-mode {
             scroll-behavior: smooth;
             transition: background 0.3s ease, color 0.3s ease;
         }
+        /* ==================== RESPONSIVE DESIGN ==================== */
+        
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 24px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .nav-links.mobile-active {
+            display: flex !important;
+        }
+
+        /* Tablet and below */
+        @media (max-width: 992px) {
+            .nav-container {
+                padding: 15px 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+
+            .achievements .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            section {
+                padding: 80px 30px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            /* Navigation */
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--primary-bg);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px 0;
+                box-shadow: 0 10px 30px var(--shadow-hover);
+                display: none;
+                z-index: 999;
+            }
+
+            .nav-links li {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid var(--shadow);
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links a {
+                display: block;
+                width: 100%;
+                font-size: 18px;
+            }
+
+            /* Hero Section */
+            .hero {
+                height: 90vh;
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                line-height: 1.2;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+
+            .circle {
+                opacity: 0.05;
+            }
+
+            /* About Section */
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .profile-image {
+                margin: 0 auto;
+                max-width: 250px;
+                height: 250px;
+            }
+
+            .about-text p {
+                font-size: 16px;
+                text-align: center;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+                margin-top: 30px;
+            }
+
+            .skill-card {
+                padding: 20px 10px;
+            }
+
+            .skill-icon {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+
+            .skill-name {
+                font-size: 14px;
+            }
+
+            /* Projects Section */
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-card {
+                min-height: auto;
+            }
+
+            .project-image {
+                height: 180px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            .project-title {
+                font-size: 20px;
+            }
+
+            .project-description {
+                font-size: 14px;
+            }
+
+            .tech-badges {
+                top: 8px;
+                right: 8px;
+                gap: 6px;
+            }
+
+            .tech-badges .badge {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+
+            /* Timeline Section */
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 40px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 70px);
+                margin-left: 70px !important;
+                text-align: left !important;
+                padding: 20px;
+            }
+
+            .timeline-icon {
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+
+            .timeline-title {
+                font-size: 18px;
+            }
+
+            .timeline-date {
+                font-size: 14px;
+            }
+
+            .timeline-description {
+                font-size: 14px;
+            }
+
+            /* Achievements Section */
+            .achievements .achievements-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .achievement-card {
+                padding: 20px;
+            }
+
+            .achievement-icon {
+                width: 56px;
+                height: 56px;
+                font-size: 24px;
+            }
+
+            .achievement-title {
+                font-size: 15px;
+            }
+
+            .achievement-desc {
+                font-size: 13px;
+            }
+
+            /* Contact Section */
+            .business-card {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .business-card .avatar {
+                width: 100px;
+                height: 100px;
+            }
+
+            .business-card .name {
+                font-size: 18px;
+            }
+
+            .business-card .role {
+                font-size: 13px;
+            }
+
+            .contact-item {
+                padding: 10px;
+                gap: 10px;
+            }
+
+            .contact-item .icon {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+
+            .contact-item .contact-text {
+                font-size: 13px;
+            }
+
+            /* Footer */
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            /* General */
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .section-title::after {
+                width: 60px;
+                height: 3px;
+            }
+        }
+
+        /* Small Mobile Devices */
+        @media (max-width: 480px) {
+            .nav-container {
+                padding: 12px 15px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .dark-mode-toggle {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero h2 {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                padding: 10px 25px;
+                font-size: 13px;
+            }
+
+            .profile-image {
+                max-width: 200px;
+                height: 200px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-image {
+                height: 160px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .business-card .avatar {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        /* Landscape Mobile */
+        @media (max-width: 768px) and (orientation: landscape) {
+            .hero {
+                height: auto;
+                min-height: 100vh;
+                padding: 100px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero h2 {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+        }
 
         /* ==================== NAVIGATION ==================== */
         nav {
@@ -1173,7 +1539,7 @@ body.dark-mode {
                 <div class="project-content">
                     <h3 class="project-title">Facility Booking System</h3>
                     <p class="project-description">The TARUMT Sport Facilities Booking System is a digital platform enabling students and staff to conveniently reserve sports facilities online. It features real-time availability checking, user authentication, automated booking confirmations, and an admin dashboard for facility management, streamlining the reservation process and eliminating scheduling conflicts across campus.</p>
-                    <a href="#" class="project-button">View Project →</a>
+                    <a href="#" class="project-button">Developing</a>
                 </div>
             </div>
     </section>
