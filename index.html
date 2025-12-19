@@ -21,14 +21,18 @@ c-<!DOCTYPE html>
         }
 
         :root {
-            --primary-bg: #ffffff;
-            --secondary-bg: #f8f9fa;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --accent-color: #ff6b35;
-            --accent-hover: #ff8555;
-            --shadow: rgba(0, 0, 0, 0.1);
-            --shadow-hover: rgba(0, 0, 0, 0.2);
+            --primary-bg: #0d2818;
+            --secondary-bg: #1a4d2e;
+            --text-primary: #ffffff;
+            --text-secondary: #c9e4ca;
+            --accent-color: #dc143c;
+            --accent-hover: #ff1744;
+            --christmas-green: #2d5016;
+            --christmas-red: #dc143c;
+            --christmas-gold: #ffd700;
+            --christmas-white: #ffffff;
+            --shadow: rgba(220, 20, 60, 0.2);
+            --shadow-hover: rgba(220, 20, 60, 0.4);
         }
 
 body.dark-mode {
@@ -36,27 +40,40 @@ body.dark-mode {
             --secondary-bg: #1a1a1a;
             --text-primary: #ffffff;
             --text-secondary: #b0b0b0;
-            --shadow: rgba(255, 107, 53, 0.15);
-            --shadow-hover: rgba(255, 107, 53, 0.35);
-            --neon-glow: 0 0 20px rgba(255, 107, 53, 0.5), 0 0 40px rgba(255, 107, 53, 0.3);
-            --neon-glow-strong: 0 0 30px rgba(255, 107, 53, 0.8), 0 0 60px rgba(255, 107, 53, 0.5), 0 0 90px rgba(255, 107, 53, 0.3);
+            --shadow: rgba(220, 20, 60, 0.2);
+            --shadow-hover: rgba(220, 20, 60, 0.4);
+            --neon-glow: 0 0 20px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+            --neon-glow-strong: 0 0 30px rgba(220, 20, 60, 0.8), 0 0 60px rgba(220, 20, 60, 0.5), 0 0 90px rgba(220, 20, 60, 0.3);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+        }
+
+        body.dark-mode {
+            --primary-bg: #0a0a0a;
+            --secondary-bg: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --shadow: rgba(220, 20, 60, 0.2);
+            --shadow-hover: rgba(220, 20, 60, 0.4);
+            --neon-glow: 0 0 20px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+            --neon-glow-strong: 0 0 30px rgba(220, 20, 60, 0.8), 0 0 60px rgba(220, 20, 60, 0.5), 0 0 90px rgba(220, 20, 60, 0.3);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
         }
 
         body.dark-mode nav {
-            box-shadow: 0 2px 30px rgba(255, 107, 53, 0.2);
-            border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+            box-shadow: 0 2px 30px rgba(220, 20, 60, 0.2);
+            border-bottom: 1px solid rgba(220, 20, 60, 0.2);
         }
 
         body.dark-mode nav.scrolled {
-            box-shadow: 0 2px 40px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 2px 40px rgba(220, 20, 60, 0.4);
         }
 
         body.dark-mode .logo {
-            text-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+            text-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
         }
 
         body.dark-mode .nav-links a:hover {
-            text-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+            text-shadow: 0 0 15px rgba(220, 20, 60, 0.6);
         }
 
         body.dark-mode .hero h1 {
@@ -68,93 +85,93 @@ body.dark-mode {
         }
 
         body.dark-mode .cta-button:hover {
-            box-shadow: 0 0 40px rgba(255, 107, 53, 1), 0 0 80px rgba(255, 107, 53, 0.6), 0 0 120px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 0 40px rgba(220, 20, 60, 1), 0 0 80px rgba(220, 20, 60, 0.6), 0 0 120px rgba(220, 20, 60, 0.4);
         }
 
         body.dark-mode .profile-image {
             box-shadow: var(--neon-glow-strong);
-            border: 2px solid rgba(255, 107, 53, 0.3);
+            border: 2px solid rgba(220, 20, 60, 0.3);
         }
 
         body.dark-mode .profile-image:hover {
-            box-shadow: 0 0 40px rgba(255, 107, 53, 1), 0 0 80px rgba(255, 107, 53, 0.6);
-            border-color: rgba(255, 107, 53, 0.6);
+            box-shadow: 0 0 40px rgba(220, 20, 60, 1), 0 0 80px rgba(220, 20, 60, 0.6);
+            border-color: rgba(220, 20, 60, 0.6);
         }
 
         body.dark-mode .skill-card {
             background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-            box-shadow: 0 8px 32px rgba(255, 107, 53, 0.15);
-            border: 1px solid rgba(255, 107, 53, 0.1);
+            box-shadow: 0 8px 32px rgba(220, 20, 60, 0.15);
+            border: 1px solid rgba(220, 20, 60, 0.1);
         }
 
         body.dark-mode .skill-card:hover {
             box-shadow: var(--neon-glow-strong);
-            border-color: rgba(255, 107, 53, 0.5);
+            border-color: rgba(220, 20, 60, 0.5);
             transform: translateY(-10px) scale(1.05);
         }
 
         body.dark-mode .project-card {
             background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.2);
-            border: 1px solid rgba(255, 107, 53, 0.15);
+            box-shadow: 0 10px 40px rgba(220, 20, 60, 0.2);
+            border: 1px solid rgba(220, 20, 60, 0.15);
         }
 
         body.dark-mode .project-card:hover {
             box-shadow: var(--neon-glow-strong);
-            border-color: rgba(255, 107, 53, 0.6);
+            border-color: rgba(220, 20, 60, 0.6);
         }
 
         body.dark-mode .project-button:hover {
-            box-shadow: 0 0 25px rgba(255, 107, 53, 0.8);
+            box-shadow: 0 0 25px rgba(220, 20, 60, 0.8);
         }
 
         body.dark-mode .achievement-card {
             background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-            box-shadow: 0 8px 30px rgba(255, 107, 53, 0.15);
-            border: 1px solid rgba(255, 107, 53, 0.1);
+            box-shadow: 0 8px 30px rgba(220, 20, 60, 0.15);
+            border: 1px solid rgba(220, 20, 60, 0.1);
         }
 
         body.dark-mode .achievement-card:hover {
             box-shadow: var(--neon-glow);
-            border-color: rgba(255, 107, 53, 0.4);
+            border-color: rgba(220, 20, 60, 0.4);
             transform: translateY(-5px);
         }
 
         body.dark-mode .timeline-content {
             background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-            box-shadow: 0 10px 40px rgba(255, 107, 53, 0.2);
-            border: 1px solid rgba(255, 107, 53, 0.15);
+            box-shadow: 0 10px 40px rgba(220, 20, 60, 0.2);
+            border: 1px solid rgba(220, 20, 60, 0.15);
         }
 
         body.dark-mode .timeline-content:hover {
             box-shadow: var(--neon-glow-strong);
-            border-color: rgba(255, 107, 53, 0.5);
+            border-color: rgba(220, 20, 60, 0.5);
         }
 
         body.dark-mode .timeline-icon {
             box-shadow: var(--neon-glow-strong);
-            border: 2px solid rgba(255, 107, 53, 0.3);
+            border: 2px solid rgba(220, 20, 60, 0.3);
         }
 
         body.dark-mode .business-card {
             background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
             box-shadow: var(--neon-glow-strong);
-            border: 1px solid rgba(255, 107, 53, 0.3);
+            border: 1px solid rgba(220, 20, 60, 0.3);
         }
 
         body.dark-mode .contact-item {
-            border: 1px solid rgba(255, 107, 53, 0.2);
-            background: rgba(255, 107, 53, 0.05);
+            border: 1px solid rgba(220, 20, 60, 0.2);
+            background: rgba(220, 20, 60, 0.05);
         }
 
         body.dark-mode .contact-item:hover {
             box-shadow: var(--neon-glow);
-            border-color: rgba(255, 107, 53, 0.5);
-            background: rgba(255, 107, 53, 0.1);
+            border-color: rgba(220, 20, 60, 0.5);
+            background: rgba(220, 20, 60, 0.1);
         }
 
         body.dark-mode .section-title::after {
-            box-shadow: 0 0 20px rgba(255, 107, 53, 0.8);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
         }
 
         body.dark-mode .circle {
@@ -162,16 +179,94 @@ body.dark-mode {
         }
 
         body.dark-mode footer {
-            border-top: 1px solid rgba(255, 107, 53, 0.2);
+            border-top: 1px solid rgba(220, 20, 60, 0.2);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: var(--primary-bg);
+            background: linear-gradient(135deg, #0d2818 0%, #1a4d2e 50%, #0d2818 100%);
+            background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.6;
             scroll-behavior: smooth;
             transition: background 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Snow Animation */
+        .snow-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            color: #ffffff;
+            font-size: 1em;
+            font-family: Arial;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            animation: snowfall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Christmas Decorations */
+        .christmas-decoration {
+            position: fixed;
+            pointer-events: none;
+            z-index: 2;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .christmas-decoration.top-left {
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            animation-delay: 0s;
+        }
+
+        .christmas-decoration.top-right {
+            top: 20px;
+            right: 20px;
+            font-size: 30px;
+            animation-delay: 1s;
+        }
+
+        .christmas-decoration.bottom-left {
+            bottom: 20px;
+            left: 20px;
+            font-size: 25px;
+            animation-delay: 0.5s;
+        }
+
+        .christmas-decoration.bottom-right {
+            bottom: 20px;
+            right: 20px;
+            font-size: 25px;
+            animation-delay: 1.5s;
         }
         /* ==================== RESPONSIVE DESIGN ==================== */
         
@@ -568,7 +663,18 @@ body.dark-mode {
         .logo {
             font-size: 24px;
             font-weight: 700;
-            color: var(--accent-color);
+            color: var(--christmas-red);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 20px rgba(220, 20, 60, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 20px rgba(220, 20, 60, 0.3);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(220, 20, 60, 0.8), 0 0 30px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+            }
         }
 
         .nav-links {
@@ -584,13 +690,33 @@ body.dark-mode {
             transition: color 0.3s ease;
         }
 
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--christmas-red), var(--christmas-gold), var(--christmas-red));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
         .nav-links a:hover {
-            color: var(--accent-color);
+            color: var(--christmas-red);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
         }
 
         .dark-mode-toggle {
-            background: var(--accent-color);
-            border: none;
+            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
+            border: 2px solid var(--christmas-gold);
             color: white;
             width: 40px;
             height: 40px;
@@ -601,11 +727,13 @@ body.dark-mode {
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.4);
         }
 
         .dark-mode-toggle:hover {
-            transform: scale(1.1);
-            background: var(--accent-hover);
+            transform: scale(1.1) rotate(360deg);
+            background: linear-gradient(135deg, #ff1744, var(--christmas-red));
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.6), 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         /* Keep the icon centered using flexbox; avoid fixed size which can shift between glyphs */
@@ -638,10 +766,21 @@ body.dark-mode {
             font-size: 64px;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--accent-color), #ff8555);
+            background: linear-gradient(135deg, var(--christmas-red), var(--christmas-gold), var(--christmas-white));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            animation: shimmer 3s ease-in-out infinite;
+            text-shadow: 0 0 30px rgba(220, 20, 60, 0.5);
+        }
+
+        @keyframes shimmer {
+            0%, 100% {
+                filter: brightness(1);
+            }
+            50% {
+                filter: brightness(1.2);
+            }
         }
 
         .hero h2 {
@@ -654,28 +793,73 @@ body.dark-mode {
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: var(--accent-color);
+            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4), 0 0 20px rgba(220, 20, 60, 0.3);
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '🎄';
+            position: absolute;
+            left: -30px;
+            transition: left 0.3s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 10px;
+        }
+
+        .cta-button::after {
+            content: '🎅';
+            position: absolute;
+            right: -30px;
+            transition: right 0.3s ease;
+        }
+
+        .cta-button:hover::after {
+            right: 10px;
         }
 
         .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 107, 53, 0.4);
-            background: var(--accent-hover);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.6), 0 0 30px rgba(220, 20, 60, 0.4);
+            background: linear-gradient(135deg, #ff1744, var(--christmas-red));
         }
 
-        /* Animated background circles */
+        /* Animated background circles - Christmas themed */
         .circle {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--accent-color), transparent);
+            background: radial-gradient(circle, var(--christmas-red), transparent);
             animation: float 6s ease-in-out infinite;
-            opacity: 0.1;
+            opacity: 0.15;
+            box-shadow: 0 0 40px rgba(220, 20, 60, 0.3);
+        }
+
+        .circle::after {
+            content: '❄️';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            opacity: 0.3;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            to {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
 
         .circle:nth-child(1) {
@@ -738,9 +922,40 @@ body.dark-mode {
             display: block;
             width: 80px;
             height: 4px;
-            background: var(--accent-color);
+            background: linear-gradient(90deg, transparent, var(--christmas-red), var(--christmas-gold), var(--christmas-red), transparent);
             margin: 20px auto 0;
             border-radius: 2px;
+            position: relative;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.5em;
+            animation: twinkle 1.5s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(220, 20, 60, 0.6);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.5;
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(-50%) scale(1.2);
+            }
         }
 
         /* ==================== ABOUT SECTION ==================== */
@@ -780,17 +995,48 @@ body.dark-mode {
         }
 
         .skill-card {
-            background: var(--secondary-bg);
+            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
             padding: 25px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px var(--shadow);
+            box-shadow: 0 5px 20px var(--shadow), inset 0 0 20px rgba(220, 20, 60, 0.1);
             transition: all 0.3s ease;
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(220, 20, 60, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
+        }
+
+        .skill-card:hover::before {
+            animation: shine 0.5s ease;
         }
 
         .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px var(--shadow-hover);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4), 0 0 30px rgba(255, 215, 0, 0.2);
+            border-color: var(--christmas-red);
+        }
+
+        @keyframes shine {
+            0% {
+                top: -50%;
+                left: -50%;
+            }
+            100% {
+                top: 150%;
+                left: 150%;
+            }
         }
 
         .skill-icon {
@@ -811,21 +1057,40 @@ body.dark-mode {
         }
 
         .project-card {
-            background: var(--secondary-bg);
+            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
             border-radius: 20px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 10px 40px var(--shadow);
+            box-shadow: 0 10px 40px var(--shadow), 0 0 20px rgba(220, 20, 60, 0.2);
             transition: all 0.4s ease;
             cursor: pointer;
             display: flex;
             flex-direction: column;
-            min-height: 420px; /* ensures consistent card heights */
+            min-height: 420px;
+            border: 2px solid transparent;
+        }
+
+        .project-card::after {
+            content: '🎁';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 24px;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+            z-index: 5;
+        }
+
+        .project-card:hover::after {
+            opacity: 1;
+            transform: scale(1) rotate(360deg);
         }
 
         .project-card:hover {
-            transform: translateY(-15px) rotateX(5deg);
-            box-shadow: 0 20px 60px var(--shadow-hover);
+            transform: translateY(-15px) rotateX(5deg) scale(1.02);
+            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
+            border-color: var(--christmas-red);
         }
 
         .project-image {
@@ -872,21 +1137,36 @@ body.dark-mode {
             align-items: center;
             justify-content: center;
             padding: 10px 25px;
-            background: var(--accent-color);
+            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
             color: white;
             text-decoration: none;
             border-radius: 25px;
             font-size: 14px;
             font-weight: 600;
             transition: all 0.3s ease;
-            margin-top: auto; /* push button to bottom of card */
-            align-self: center; /* center the button horizontally inside the card */
-            text-align: center; /* ensure text is centered inside the button */
+            margin-top: auto;
+            align-self: center;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-button::before {
+            content: '🎄';
+            position: absolute;
+            left: -20px;
+            transition: left 0.3s ease;
+        }
+
+        .project-button:hover::before {
+            left: 5px;
         }
 
         .project-button:hover {
-            background: var(--accent-hover);
-            transform: translateX(5px);
+            background: linear-gradient(135deg, #ff1744, var(--christmas-red));
+            transform: translateX(5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         /* Tech badges (top-right bookmark images) */
@@ -950,15 +1230,41 @@ body.dark-mode {
         }
 
         .achievement-card {
-            background: var(--secondary-bg);
+            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 8px 30px var(--shadow);
+            box-shadow: 0 8px 30px var(--shadow), 0 0 15px rgba(220, 20, 60, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-card::before {
+            content: '⭐';
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            font-size: 20px;
+            opacity: 0;
+            transform: rotate(-45deg) scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover::before {
+            opacity: 1;
+            transform: rotate(0deg) scale(1);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(220, 20, 60, 0.4), 0 0 25px rgba(255, 215, 0, 0.3);
+            border-color: var(--christmas-red);
         }
 
         .achievement-icon {
@@ -1018,7 +1324,18 @@ body.dark-mode {
             transform: translateX(-50%);
             width: 4px;
             height: 100%;
-            background: var(--accent-color);
+            background: linear-gradient(180deg, var(--christmas-red), var(--christmas-gold), var(--christmas-red));
+            box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+            animation: timelineGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes timelineGlow {
+            0%, 100% {
+                box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(220, 20, 60, 0.6);
+            }
         }
 
         .timeline-item {
@@ -1059,14 +1376,25 @@ body.dark-mode {
             transform: translateX(-50%);
             width: 60px;
             height: 60px;
-            background: var(--accent-color);
+            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             color: white;
-            box-shadow: 0 5px 20px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
+            border: 3px solid var(--christmas-gold);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.1);
+            }
         }
 
         .timeline-title {
@@ -1195,18 +1523,38 @@ body.dark-mode {
 
         /* Business card / compact contact */
         .business-card {
-            background: var(--secondary-bg);
+            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
             padding: 20px 24px;
             border-radius: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 10px 30px var(--shadow);
+            box-shadow: 0 10px 30px var(--shadow), 0 0 20px rgba(220, 20, 60, 0.2);
             max-width: 520px;
             width: 100%;
             margin: 0 auto;
             text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .business-card::before {
+            content: '🎄';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 60px;
+            opacity: 0.1;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .business-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
+            border-color: var(--christmas-red);
         }
 
         .business-top, .business-body { width: 100%; }
@@ -1277,9 +1625,16 @@ body.dark-mode {
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            background: var(--accent-color);
+            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
             color: white;
             font-size: 16px;
+            box-shadow: 0 3px 10px rgba(220, 20, 60, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover .icon {
+            transform: rotate(360deg) scale(1.1);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
         }
 
         .contact-item .icon i {
@@ -1315,9 +1670,23 @@ body.dark-mode {
 
         /* ==================== FOOTER ==================== */
         footer {
-            background: var(--secondary-bg);
+            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
             padding: 40px;
             text-align: center;
+            border-top: 3px solid var(--christmas-red);
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 20px;
+            opacity: 0.3;
+            animation: float 3s ease-in-out infinite;
         }
 
         .footer-links {
@@ -1334,8 +1703,28 @@ body.dark-mode {
             transition: color 0.3s ease;
         }
 
+        .footer-links a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a::before {
+            content: '🎄';
+            position: absolute;
+            left: -25px;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            left: -20px;
+        }
+
         .footer-links a:hover {
-            color: var(--accent-color);
+            color: var(--christmas-red);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+            transform: translateX(5px);
         }
 
         .copyright {
@@ -1426,6 +1815,11 @@ body.dark-mode {
         </div>
     </nav>
 
+    <!-- ==================== SNOW ANIMATION ==================== -->
+    <div class="snow-container" id="snowContainer"></div>
+
+    <!-- ==================== CHRISTMAS DECORATIONS ==================== -->
+
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero" id="home">
         <div class="circle"></div>
@@ -1434,7 +1828,7 @@ body.dark-mode {
         <div class="hero-content">
             <h1>Alex Ng Wen Jia</h1>
             <h2>Software Engineer | Game Developer | UI/UX Enthusiast</h2>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <a href="#projects" class="cta-button">View My Work </a>
         </div>
     </section>
 
@@ -2017,7 +2411,37 @@ body.dark-mode {
         `;
         document.head.appendChild(rainbowStyle);
 
-        console.log('🚀 Portfolio loaded successfully!');
+        // Create snowflakes
+        function createSnowflakes() {
+            const snowContainer = document.getElementById('snowContainer');
+            const snowflakeSymbols = ['❄', '❅', '❆', '✻', '✼', '✽', '✾', '✿'];
+            const numSnowflakes = 20;
+
+            for (let i = 0; i < numSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.textContent = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
+                snowflake.style.left = Math.random() * 100 + '%';
+                snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                snowflake.style.animationDelay = Math.random() * 2 + 's';
+                snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        createSnowflakes();
+
+        // Add Christmas music toggle (optional - user can enable)
+        function addChristmasMusic() {
+            // Uncomment to add background music
+            // const audio = new Audio('christmas-music.mp3');
+            // audio.loop = true;
+            // audio.volume = 0.3;
+            // audio.play().catch(e => console.log('Audio autoplay prevented'));
+        }
+
+        console.log('🎄 Christmas Portfolio loaded successfully!');
+        console.log('🎅 Merry Christmas!');
         console.log('💡 Tip: Try the dark mode toggle!');
     </script>
 </body>
