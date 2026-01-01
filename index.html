@@ -1,5 +1,5 @@
 
-c-<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,42 +21,30 @@ c-<!DOCTYPE html>
         }
 
         :root {
-            --primary-bg: #0d2818;
-            --secondary-bg: #1a4d2e;
+            --primary-bg: #1a0000;
+            --secondary-bg: #2d0000;
             --text-primary: #ffffff;
-            --text-secondary: #c9e4ca;
+            --text-secondary: #ffe4e1;
             --accent-color: #dc143c;
             --accent-hover: #ff1744;
-            --christmas-green: #2d5016;
-            --christmas-red: #dc143c;
-            --christmas-gold: #ffd700;
-            --christmas-white: #ffffff;
+            --cny-red: #dc143c;
+            --cny-gold: #ffd700;
+            --cny-dark-red: #8b0000;
+            --cny-white: #ffffff;
             --shadow: rgba(220, 20, 60, 0.2);
             --shadow-hover: rgba(220, 20, 60, 0.4);
-        }
-
-body.dark-mode {
-            --primary-bg: #0a0a0a;
-            --secondary-bg: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --shadow: rgba(220, 20, 60, 0.2);
-            --shadow-hover: rgba(220, 20, 60, 0.4);
-            --neon-glow: 0 0 20px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
-            --neon-glow-strong: 0 0 30px rgba(220, 20, 60, 0.8), 0 0 60px rgba(220, 20, 60, 0.5), 0 0 90px rgba(220, 20, 60, 0.3);
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
         }
 
         body.dark-mode {
-            --primary-bg: #0a0a0a;
-            --secondary-bg: #1a1a1a;
+            --primary-bg: #0a0000;
+            --secondary-bg: #1a0000;
             --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
+            --text-secondary: #ffe4e1;
             --shadow: rgba(220, 20, 60, 0.2);
             --shadow-hover: rgba(220, 20, 60, 0.4);
-            --neon-glow: 0 0 20px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
-            --neon-glow-strong: 0 0 30px rgba(220, 20, 60, 0.8), 0 0 60px rgba(220, 20, 60, 0.5), 0 0 90px rgba(220, 20, 60, 0.3);
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 50%, #0a0a0a 100%);
+            --neon-glow: 0 0 20px rgba(220, 20, 60, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
+            --neon-glow-strong: 0 0 30px rgba(220, 20, 60, 0.8), 0 0 60px rgba(255, 215, 0, 0.5), 0 0 90px rgba(220, 20, 60, 0.3);
+            background: linear-gradient(135deg, #0a0000 0%, #1a0000 30%, #2d0000 60%, #1a0000 90%, #0a0000 100%);
         }
 
         body.dark-mode nav {
@@ -69,11 +57,11 @@ body.dark-mode {
         }
 
         body.dark-mode .logo {
-            text-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            text-shadow: 0 0 20px rgba(220, 20, 60, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
         }
 
         body.dark-mode .nav-links a:hover {
-            text-shadow: 0 0 15px rgba(220, 20, 60, 0.6);
+            text-shadow: 0 0 15px rgba(220, 20, 60, 0.6), 0 0 20px rgba(255, 215, 0, 0.4);
         }
 
         body.dark-mode .hero h1 {
@@ -85,93 +73,93 @@ body.dark-mode {
         }
 
         body.dark-mode .cta-button:hover {
-            box-shadow: 0 0 40px rgba(220, 20, 60, 1), 0 0 80px rgba(220, 20, 60, 0.6), 0 0 120px rgba(220, 20, 60, 0.4);
+            box-shadow: 0 0 40px rgba(220, 20, 60, 1), 0 0 80px rgba(255, 215, 0, 0.8), 0 0 120px rgba(220, 20, 60, 0.4);
         }
 
         body.dark-mode .profile-image {
             box-shadow: var(--neon-glow-strong);
-            border: 2px solid rgba(220, 20, 60, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.3);
         }
 
         body.dark-mode .profile-image:hover {
-            box-shadow: 0 0 40px rgba(220, 20, 60, 1), 0 0 80px rgba(220, 20, 60, 0.6);
-            border-color: rgba(220, 20, 60, 0.6);
+            box-shadow: 0 0 40px rgba(220, 20, 60, 1), 0 0 80px rgba(255, 215, 0, 0.8);
+            border-color: rgba(255, 215, 0, 0.6);
         }
 
         body.dark-mode .skill-card {
-            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            background: linear-gradient(145deg, #1a0000, #0f0000);
             box-shadow: 0 8px 32px rgba(220, 20, 60, 0.15);
-            border: 1px solid rgba(220, 20, 60, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.1);
         }
 
         body.dark-mode .skill-card:hover {
             box-shadow: var(--neon-glow-strong);
-            border-color: rgba(220, 20, 60, 0.5);
+            border-color: rgba(255, 215, 0, 0.5);
             transform: translateY(-10px) scale(1.05);
         }
 
         body.dark-mode .project-card {
-            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            background: linear-gradient(145deg, #1a0000, #0f0000);
             box-shadow: 0 10px 40px rgba(220, 20, 60, 0.2);
-            border: 1px solid rgba(220, 20, 60, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.15);
         }
 
         body.dark-mode .project-card:hover {
             box-shadow: var(--neon-glow-strong);
-            border-color: rgba(220, 20, 60, 0.6);
+            border-color: rgba(255, 215, 0, 0.6);
         }
 
         body.dark-mode .project-button:hover {
-            box-shadow: 0 0 25px rgba(220, 20, 60, 0.8);
+            box-shadow: 0 0 25px rgba(220, 20, 60, 0.8), 0 0 35px rgba(255, 215, 0, 0.5);
         }
 
         body.dark-mode .achievement-card {
-            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            background: linear-gradient(145deg, #1a0000, #0f0000);
             box-shadow: 0 8px 30px rgba(220, 20, 60, 0.15);
-            border: 1px solid rgba(220, 20, 60, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.1);
         }
 
         body.dark-mode .achievement-card:hover {
             box-shadow: var(--neon-glow);
-            border-color: rgba(220, 20, 60, 0.4);
+            border-color: rgba(255, 215, 0, 0.4);
             transform: translateY(-5px);
         }
 
         body.dark-mode .timeline-content {
-            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            background: linear-gradient(145deg, #1a0000, #0f0000);
             box-shadow: 0 10px 40px rgba(220, 20, 60, 0.2);
-            border: 1px solid rgba(220, 20, 60, 0.15);
+            border: 1px solid rgba(255, 215, 0, 0.15);
         }
 
         body.dark-mode .timeline-content:hover {
             box-shadow: var(--neon-glow-strong);
-            border-color: rgba(220, 20, 60, 0.5);
+            border-color: rgba(255, 215, 0, 0.5);
         }
 
         body.dark-mode .timeline-icon {
             box-shadow: var(--neon-glow-strong);
-            border: 2px solid rgba(220, 20, 60, 0.3);
+            border: 2px solid rgba(255, 215, 0, 0.3);
         }
 
         body.dark-mode .business-card {
-            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            background: linear-gradient(145deg, #1a0000, #0f0000);
             box-shadow: var(--neon-glow-strong);
-            border: 1px solid rgba(220, 20, 60, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.3);
         }
 
         body.dark-mode .contact-item {
-            border: 1px solid rgba(220, 20, 60, 0.2);
+            border: 1px solid rgba(255, 215, 0, 0.2);
             background: rgba(220, 20, 60, 0.05);
         }
 
         body.dark-mode .contact-item:hover {
             box-shadow: var(--neon-glow);
-            border-color: rgba(220, 20, 60, 0.5);
+            border-color: rgba(255, 215, 0, 0.5);
             background: rgba(220, 20, 60, 0.1);
         }
 
         body.dark-mode .section-title::after {
-            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
         }
 
         body.dark-mode .circle {
@@ -179,12 +167,12 @@ body.dark-mode {
         }
 
         body.dark-mode footer {
-            border-top: 1px solid rgba(220, 20, 60, 0.2);
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0d2818 0%, #1a4d2e 50%, #0d2818 100%);
+            background: linear-gradient(135deg, #1a0000 0%, #2d0000 30%, #8b0000 60%, #2d0000 90%, #1a0000 100%);
             background-attachment: fixed;
             color: var(--text-primary);
             line-height: 1.6;
@@ -194,8 +182,8 @@ body.dark-mode {
             overflow-x: hidden;
         }
 
-        /* Snow Animation */
-        .snow-container {
+        /* Chinese New Year Animation */
+        .cny-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -206,63 +194,62 @@ body.dark-mode {
             overflow: hidden;
         }
 
-        .snowflake {
+        .cny-element {
             position: absolute;
-            color: #ffffff;
             font-size: 1em;
             font-family: Arial;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-            animation: snowfall linear infinite;
+            text-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+            animation: cnyFloat linear infinite;
             opacity: 0.8;
         }
 
-        @keyframes snowfall {
+        @keyframes cnyFloat {
             0% {
-                transform: translateY(-100vh) rotate(0deg);
+                transform: translateY(-100vh) translateX(0) rotate(0deg);
                 opacity: 0;
             }
             10% {
-                opacity: 0.8;
+                opacity: 0.9;
             }
             90% {
-                opacity: 0.8;
+                opacity: 0.9;
             }
             100% {
-                transform: translateY(100vh) rotate(360deg);
+                transform: translateY(100vh) translateX(50px) rotate(360deg);
                 opacity: 0;
             }
         }
 
-        /* Christmas Decorations */
-        .christmas-decoration {
+        /* Chinese New Year Decorations */
+        .cny-decoration {
             position: fixed;
             pointer-events: none;
             z-index: 2;
             animation: float 3s ease-in-out infinite;
         }
 
-        .christmas-decoration.top-left {
+        .cny-decoration.top-left {
             top: 20px;
             left: 20px;
             font-size: 30px;
             animation-delay: 0s;
         }
 
-        .christmas-decoration.top-right {
+        .cny-decoration.top-right {
             top: 20px;
             right: 20px;
             font-size: 30px;
             animation-delay: 1s;
         }
 
-        .christmas-decoration.bottom-left {
+        .cny-decoration.bottom-left {
             bottom: 20px;
             left: 20px;
             font-size: 25px;
             animation-delay: 0.5s;
         }
 
-        .christmas-decoration.bottom-right {
+        .cny-decoration.bottom-right {
             bottom: 20px;
             right: 20px;
             font-size: 25px;
@@ -663,17 +650,17 @@ body.dark-mode {
         .logo {
             font-size: 24px;
             font-weight: 700;
-            color: var(--christmas-red);
-            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 20px rgba(220, 20, 60, 0.3);
+            color: var(--cny-red);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 20px rgba(255, 215, 0, 0.5);
             animation: glow 2s ease-in-out infinite alternate;
         }
 
         @keyframes glow {
             from {
-                text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 20px rgba(220, 20, 60, 0.3);
+                text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 20px rgba(255, 215, 0, 0.5);
             }
             to {
-                text-shadow: 0 0 20px rgba(220, 20, 60, 0.8), 0 0 30px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+                text-shadow: 0 0 20px rgba(220, 20, 60, 0.8), 0 0 30px rgba(255, 215, 0, 0.8), 0 0 40px rgba(220, 20, 60, 0.5);
             }
         }
 
@@ -701,7 +688,7 @@ body.dark-mode {
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, var(--christmas-red), var(--christmas-gold), var(--christmas-red));
+            background: linear-gradient(90deg, var(--cny-red), var(--cny-gold), var(--cny-red));
             transition: width 0.3s ease;
         }
 
@@ -710,13 +697,13 @@ body.dark-mode {
         }
 
         .nav-links a:hover {
-            color: var(--christmas-red);
-            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+            color: var(--cny-red);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
         }
 
         .dark-mode-toggle {
-            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
-            border: 2px solid var(--christmas-gold);
+            background: linear-gradient(135deg, var(--cny-red), #ff1744);
+            border: 2px solid var(--cny-gold);
             color: white;
             width: 40px;
             height: 40px;
@@ -732,8 +719,8 @@ body.dark-mode {
 
         .dark-mode-toggle:hover {
             transform: scale(1.1) rotate(360deg);
-            background: linear-gradient(135deg, #ff1744, var(--christmas-red));
-            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.6), 0 0 15px rgba(255, 215, 0, 0.3);
+            background: linear-gradient(135deg, #ff1744, var(--cny-red));
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.6), 0 0 15px rgba(255, 215, 0, 0.5);
         }
 
         /* Keep the icon centered using flexbox; avoid fixed size which can shift between glyphs */
@@ -766,12 +753,12 @@ body.dark-mode {
             font-size: 64px;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--christmas-red), var(--christmas-gold), var(--christmas-white));
+            background: linear-gradient(135deg, var(--cny-red), var(--cny-gold), var(--cny-white));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: shimmer 3s ease-in-out infinite;
-            text-shadow: 0 0 30px rgba(220, 20, 60, 0.5);
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
         }
 
         @keyframes shimmer {
@@ -793,19 +780,19 @@ body.dark-mode {
         .cta-button {
             display: inline-block;
             padding: 15px 40px;
-            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
+            background: linear-gradient(135deg, var(--cny-red), #ff1744);
             color: white;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4), 0 0 20px rgba(220, 20, 60, 0.3);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4), 0 0 20px rgba(255, 215, 0, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
         .cta-button::before {
-            content: '🎄';
+            content: '🧧';
             position: absolute;
             left: -30px;
             transition: left 0.3s ease;
@@ -816,7 +803,7 @@ body.dark-mode {
         }
 
         .cta-button::after {
-            content: '🎅';
+            content: '🏮';
             position: absolute;
             right: -30px;
             transition: right 0.3s ease;
@@ -828,28 +815,28 @@ body.dark-mode {
 
         .cta-button:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.6), 0 0 30px rgba(220, 20, 60, 0.4);
-            background: linear-gradient(135deg, #ff1744, var(--christmas-red));
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.6), 0 0 30px rgba(255, 215, 0, 0.5);
+            background: linear-gradient(135deg, #ff1744, var(--cny-red));
         }
 
-        /* Animated background circles - Christmas themed */
+        /* Animated background circles - Chinese New Year themed */
         .circle {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--christmas-red), transparent);
+            background: radial-gradient(circle, var(--cny-red), transparent);
             animation: float 6s ease-in-out infinite;
             opacity: 0.15;
-            box-shadow: 0 0 40px rgba(220, 20, 60, 0.3);
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
         }
 
         .circle::after {
-            content: '❄️';
+            content: '💰';
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-size: 2em;
-            opacity: 0.3;
+            opacity: 0.4;
             animation: spin 4s linear infinite;
         }
 
@@ -922,7 +909,7 @@ body.dark-mode {
             display: block;
             width: 80px;
             height: 4px;
-            background: linear-gradient(90deg, transparent, var(--christmas-red), var(--christmas-gold), var(--christmas-red), transparent);
+            background: linear-gradient(90deg, transparent, var(--cny-red), var(--cny-gold), var(--cny-red), transparent);
             margin: 20px auto 0;
             border-radius: 2px;
             position: relative;
@@ -940,10 +927,10 @@ body.dark-mode {
 
         @keyframes sparkle {
             0%, 100% {
-                box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+                box-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
             }
             50% {
-                box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(220, 20, 60, 0.6);
+                box-shadow: 0 0 25px rgba(255, 215, 0, 1), 0 0 40px rgba(220, 20, 60, 0.8);
             }
         }
 
@@ -995,11 +982,11 @@ body.dark-mode {
         }
 
         .skill-card {
-            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
+            background: linear-gradient(135deg, var(--secondary-bg), var(--cny-dark-red));
             padding: 25px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 20px var(--shadow), inset 0 0 20px rgba(220, 20, 60, 0.1);
+            box-shadow: 0 5px 20px var(--shadow), inset 0 0 20px rgba(255, 215, 0, 0.1);
             transition: all 0.3s ease;
             border: 2px solid transparent;
             position: relative;
@@ -1024,8 +1011,8 @@ body.dark-mode {
 
         .skill-card:hover {
             transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4), 0 0 30px rgba(255, 215, 0, 0.2);
-            border-color: var(--christmas-red);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4), 0 0 30px rgba(255, 215, 0, 0.4);
+            border-color: var(--cny-gold);
         }
 
         @keyframes shine {
@@ -1057,11 +1044,11 @@ body.dark-mode {
         }
 
         .project-card {
-            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
+            background: linear-gradient(135deg, var(--secondary-bg), var(--cny-dark-red));
             border-radius: 20px;
             overflow: hidden;
             position: relative;
-            box-shadow: 0 10px 40px var(--shadow), 0 0 20px rgba(220, 20, 60, 0.2);
+            box-shadow: 0 10px 40px var(--shadow), 0 0 20px rgba(255, 215, 0, 0.2);
             transition: all 0.4s ease;
             cursor: pointer;
             display: flex;
@@ -1071,7 +1058,7 @@ body.dark-mode {
         }
 
         .project-card::after {
-            content: '🎁';
+            content: '🧧';
             position: absolute;
             top: 10px;
             left: 10px;
@@ -1089,8 +1076,8 @@ body.dark-mode {
 
         .project-card:hover {
             transform: translateY(-15px) rotateX(5deg) scale(1.02);
-            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
-            border-color: var(--christmas-red);
+            box-shadow: 0 20px 60px rgba(220, 20, 60, 0.5), 0 0 40px rgba(255, 215, 0, 0.5);
+            border-color: var(--cny-gold);
         }
 
         .project-image {
@@ -1137,7 +1124,7 @@ body.dark-mode {
             align-items: center;
             justify-content: center;
             padding: 10px 25px;
-            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
+            background: linear-gradient(135deg, var(--cny-red), #ff1744);
             color: white;
             text-decoration: none;
             border-radius: 25px;
@@ -1153,7 +1140,7 @@ body.dark-mode {
         }
 
         .project-button::before {
-            content: '🎄';
+            content: '🏮';
             position: absolute;
             left: -20px;
             transition: left 0.3s ease;
@@ -1164,9 +1151,9 @@ body.dark-mode {
         }
 
         .project-button:hover {
-            background: linear-gradient(135deg, #ff1744, var(--christmas-red));
+            background: linear-gradient(135deg, #ff1744, var(--cny-red));
             transform: translateX(5px) scale(1.05);
-            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 8px 20px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.5);
         }
 
         /* Tech badges (top-right bookmark images) */
@@ -1230,11 +1217,11 @@ body.dark-mode {
         }
 
         .achievement-card {
-            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
+            background: linear-gradient(135deg, var(--secondary-bg), var(--cny-dark-red));
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            box-shadow: 0 8px 30px var(--shadow), 0 0 15px rgba(220, 20, 60, 0.2);
+            box-shadow: 0 8px 30px var(--shadow), 0 0 15px rgba(255, 215, 0, 0.2);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1246,7 +1233,7 @@ body.dark-mode {
         }
 
         .achievement-card::before {
-            content: '⭐';
+            content: '💰';
             position: absolute;
             top: 5px;
             right: 5px;
@@ -1263,8 +1250,8 @@ body.dark-mode {
 
         .achievement-card:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(220, 20, 60, 0.4), 0 0 25px rgba(255, 215, 0, 0.3);
-            border-color: var(--christmas-red);
+            box-shadow: 0 12px 40px rgba(220, 20, 60, 0.4), 0 0 25px rgba(255, 215, 0, 0.5);
+            border-color: var(--cny-gold);
         }
 
         .achievement-icon {
@@ -1311,6 +1298,34 @@ body.dark-mode {
             }
         }
 
+        /* Light-mode achievement colours (non-dark-mode) */
+        body:not(.dark-mode) .achievement-card {
+            background: linear-gradient(135deg, #fff9e6 0%, #fff2d0 100%);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06), 0 0 15px rgba(255,215,0,0.08);
+            border-color: rgba(255,215,0,0.15);
+            color: #5a2a2a;
+        }
+
+        body:not(.dark-mode) .achievement-card:hover {
+            box-shadow: 0 12px 40px rgba(255,215,0,0.18), 0 0 25px rgba(220,20,60,0.06);
+            border-color: var(--cny-gold);
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        body:not(.dark-mode) .achievement-icon {
+            border: 1px solid rgba(255,215,0,0.25);
+            box-shadow: 0 6px 18px rgba(255,215,0,0.06);
+            background: linear-gradient(135deg, rgba(255,215,0,0.06), rgba(220,20,60,0.03));
+        }
+
+        body:not(.dark-mode) .achievement-title {
+            color: #8b0000;
+        }
+
+        body:not(.dark-mode) .achievement-desc {
+            color: #6b2a2a;
+        }
+
         /* ==================== EXPERIENCE SECTION ==================== */
         .timeline {
             position: relative;
@@ -1324,17 +1339,17 @@ body.dark-mode {
             transform: translateX(-50%);
             width: 4px;
             height: 100%;
-            background: linear-gradient(180deg, var(--christmas-red), var(--christmas-gold), var(--christmas-red));
-            box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+            background: linear-gradient(180deg, var(--cny-red), var(--cny-gold), var(--cny-red));
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
             animation: timelineGlow 2s ease-in-out infinite;
         }
 
         @keyframes timelineGlow {
             0%, 100% {
-                box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+                box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
             }
             50% {
-                box-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(220, 20, 60, 0.6);
+                box-shadow: 0 0 25px rgba(255, 215, 0, 1), 0 0 40px rgba(220, 20, 60, 0.8);
             }
         }
 
@@ -1376,15 +1391,15 @@ body.dark-mode {
             transform: translateX(-50%);
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
+            background: linear-gradient(135deg, var(--cny-red), #ff1744);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
             color: white;
-            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
-            border: 3px solid var(--christmas-gold);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.5);
+            border: 3px solid var(--cny-gold);
             animation: pulse 2s ease-in-out infinite;
         }
 
@@ -1523,14 +1538,14 @@ body.dark-mode {
 
         /* Business card / compact contact */
         .business-card {
-            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
+            background: linear-gradient(135deg, var(--secondary-bg), var(--cny-dark-red));
             padding: 20px 24px;
             border-radius: 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 12px;
-            box-shadow: 0 10px 30px var(--shadow), 0 0 20px rgba(220, 20, 60, 0.2);
+            box-shadow: 0 10px 30px var(--shadow), 0 0 20px rgba(255, 215, 0, 0.2);
             max-width: 520px;
             width: 100%;
             margin: 0 auto;
@@ -1542,7 +1557,7 @@ body.dark-mode {
         }
 
         .business-card::before {
-            content: '🎄';
+            content: '🏮';
             position: absolute;
             top: -20px;
             right: -20px;
@@ -1553,8 +1568,8 @@ body.dark-mode {
 
         .business-card:hover {
             transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4), 0 0 30px rgba(255, 215, 0, 0.3);
-            border-color: var(--christmas-red);
+            box-shadow: 0 15px 40px rgba(220, 20, 60, 0.4), 0 0 30px rgba(255, 215, 0, 0.5);
+            border-color: var(--cny-gold);
         }
 
         .business-top, .business-body { width: 100%; }
@@ -1625,7 +1640,7 @@ body.dark-mode {
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            background: linear-gradient(135deg, var(--christmas-red), #ff1744);
+            background: linear-gradient(135deg, var(--cny-red), #ff1744);
             color: white;
             font-size: 16px;
             box-shadow: 0 3px 10px rgba(220, 20, 60, 0.3);
@@ -1634,7 +1649,7 @@ body.dark-mode {
 
         .contact-item:hover .icon {
             transform: rotate(360deg) scale(1.1);
-            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.5), 0 0 10px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(220, 20, 60, 0.5), 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
         .contact-item .icon i {
@@ -1670,10 +1685,10 @@ body.dark-mode {
 
         /* ==================== FOOTER ==================== */
         footer {
-            background: linear-gradient(135deg, var(--secondary-bg), var(--christmas-green));
+            background: linear-gradient(135deg, var(--secondary-bg), var(--cny-dark-red));
             padding: 40px;
             text-align: center;
-            border-top: 3px solid var(--christmas-red);
+            border-top: 3px solid var(--cny-gold);
             position: relative;
             overflow: hidden;
         }
@@ -1709,7 +1724,7 @@ body.dark-mode {
         }
 
         .footer-links a::before {
-            content: '🎄';
+            content: '🧧';
             position: absolute;
             left: -25px;
             opacity: 0;
@@ -1722,8 +1737,8 @@ body.dark-mode {
         }
 
         .footer-links a:hover {
-            color: var(--christmas-red);
-            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
+            color: var(--cny-red);
+            text-shadow: 0 0 10px rgba(220, 20, 60, 0.5), 0 0 15px rgba(255, 215, 0, 0.3);
             transform: translateX(5px);
         }
 
@@ -1815,10 +1830,10 @@ body.dark-mode {
         </div>
     </nav>
 
-    <!-- ==================== SNOW ANIMATION ==================== -->
-    <div class="snow-container" id="snowContainer"></div>
+    <!-- ==================== CHINESE NEW YEAR ANIMATION ==================== -->
+    <div class="cny-container" id="cnyContainer"></div>
 
-    <!-- ==================== CHRISTMAS DECORATIONS ==================== -->
+    <!-- ==================== CHINESE NEW YEAR DECORATIONS ==================== -->
 
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero" id="home">
@@ -2411,37 +2426,37 @@ body.dark-mode {
         `;
         document.head.appendChild(rainbowStyle);
 
-        // Create snowflakes
-        function createSnowflakes() {
-            const snowContainer = document.getElementById('snowContainer');
-            const snowflakeSymbols = ['❄', '❅', '❆', '✻', '✼', '✽', '✾', '✿'];
-            const numSnowflakes = 20;
+        // Create Chinese New Year elements
+        function createCNYElements() {
+            const cnyContainer = document.getElementById('cnyContainer');
+            const cnySymbols = ['🧧', '🏮', '💰', '🧨', '🎊', '🐉', '🥟', '🎋'];
+            const numElements = 25;
 
-            for (let i = 0; i < numSnowflakes; i++) {
-                const snowflake = document.createElement('div');
-                snowflake.className = 'snowflake';
-                snowflake.textContent = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
-                snowflake.style.left = Math.random() * 100 + '%';
-                snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                snowflake.style.animationDelay = Math.random() * 2 + 's';
-                snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
-                snowContainer.appendChild(snowflake);
+            for (let i = 0; i < numElements; i++) {
+                const element = document.createElement('div');
+                element.className = 'cny-element';
+                element.textContent = cnySymbols[Math.floor(Math.random() * cnySymbols.length)];
+                element.style.left = Math.random() * 100 + '%';
+                element.style.animationDuration = (Math.random() * 4 + 3) + 's';
+                element.style.animationDelay = Math.random() * 2 + 's';
+                element.style.fontSize = (Math.random() * 12 + 12) + 'px';
+                cnyContainer.appendChild(element);
             }
         }
 
-        createSnowflakes();
+        createCNYElements();
 
-        // Add Christmas music toggle (optional - user can enable)
-        function addChristmasMusic() {
+        // Add Chinese New Year music toggle (optional - user can enable)
+        function addCNYMusic() {
             // Uncomment to add background music
-            // const audio = new Audio('christmas-music.mp3');
+            // const audio = new Audio('cny-music.mp3');
             // audio.loop = true;
             // audio.volume = 0.3;
             // audio.play().catch(e => console.log('Audio autoplay prevented'));
         }
 
-        console.log('🎄 Christmas Portfolio loaded successfully!');
-        console.log('🎅 Merry Christmas!');
+        console.log('🧧 Chinese New Year Portfolio loaded successfully!');
+        console.log('🏮 Happy Chinese New Year! 恭喜发财!');
         console.log('💡 Tip: Try the dark mode toggle!');
     </script>
 </body>
