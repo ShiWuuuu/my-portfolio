@@ -904,13 +904,22 @@
         }
 
         @media (max-width: 768px) {
+            .nav-container {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
             .mobile-toggle {
                 display: block;
             }
 
             .nav-links {
                 position: fixed;
-                top: 80px;
+                top: 70px;
                 left: 0;
                 width: 100%;
                 background: rgba(10, 10, 10, 0.98);
@@ -919,6 +928,7 @@
                 padding: 30px 0;
                 display: none;
                 border-top: 2px solid var(--flame-core);
+                z-index: 999;
             }
 
             .nav-links.active {
@@ -932,30 +942,315 @@
                 border-bottom: 1px solid rgba(255, 69, 0, 0.2);
             }
 
+            .nav-links a {
+                display: block;
+                width: 100%;
+                font-size: 16px;
+                padding: 10px 0;
+            }
+
             section {
-                padding: 80px 20px;
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 32px;
+                margin-bottom: 40px;
+            }
+
+            .hero {
+                padding: 0 20px;
+                height: auto;
+                min-height: 90vh;
+                padding-top: 100px;
+                padding-bottom: 50px;
+            }
+
+            .hero-glitch {
+                font-size: 36px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+
+            .profile-img {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .project-card {
+                min-height: auto;
+            }
+
+            .project-img {
+                height: 180px;
+            }
+
+            .project-info {
+                padding: 20px;
+            }
+
+            .project-title {
+                font-size: 20px;
+            }
+
+            .project-desc {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
+
+            .project-btn {
+                padding: 10px 20px;
+                font-size: 12px;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-entry {
+                flex-direction: column;
+                align-items: flex-start;
+                margin-bottom: 30px;
+            }
+
+            .timeline-box {
+                width: calc(100% - 70px);
+                margin-left: 70px !important;
+                text-align: left !important;
+                padding: 20px;
+            }
+
+            .timeline-flame {
+                left: 20px;
+                width: 40px;
+                height: 40px;
+            }
+
+            .timeline-flame img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .timeline-heading {
+                font-size: 18px;
+            }
+
+            .timeline-period {
+                font-size: 14px;
+            }
+
+            .timeline-text {
+                font-size: 14px;
             }
 
             .achievements-grid {
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .achievement-box {
+                padding: 15px;
+            }
+
+            .achievement-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .achievement-icon img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .achievement-title {
+                font-size: 14px;
+            }
+
+            .achievement-desc {
+                font-size: 12px;
             }
         }
 
         @media (max-width: 480px) {
+            .nav-container {
+                padding: 12px 15px;
+            }
+
+            .logo {
+                font-size: 18px;
+                letter-spacing: 1px;
+            }
+
             .hero-glitch {
-                font-size: 40px;
+                font-size: 28px;
+                line-height: 1.2;
             }
 
             .hero-subtitle {
+                font-size: 14px;
+                margin-bottom: 30px;
+            }
+
+            .cta-ignite {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .section-title {
+                font-size: 26px;
+                margin-bottom: 30px;
+            }
+
+            .flame-line {
+                height: 2px;
+                margin: 15px auto;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .profile-img {
+                max-width: 200px;
+                height: 200px;
+            }
+
+            .about-content p {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .skill-item {
+                padding: 15px;
+            }
+
+            .skill-icon {
+                width: 40px;
+                height: 40px;
+            }
+
+            .skill-icon img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .skill-label {
+                font-size: 12px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .project-card {
+                min-height: auto;
+            }
+
+            .project-img {
+                height: 150px;
+            }
+
+            .project-info {
+                padding: 15px;
+            }
+
+            .project-title {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .project-desc {
+                font-size: 13px;
+                margin-bottom: 12px;
+            }
+
+            .project-btn {
+                padding: 8px 16px;
+                font-size: 11px;
+            }
+
+            .timeline::before {
+                left: 15px;
+            }
+
+            .timeline-entry {
+                margin-bottom: 25px;
+            }
+
+            .timeline-box {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+                padding: 15px;
+            }
+
+            .timeline-flame {
+                left: 15px;
+                width: 35px;
+                height: 35px;
+            }
+
+            .timeline-heading {
                 font-size: 16px;
+            }
+
+            .timeline-period {
+                font-size: 12px;
+            }
+
+            .timeline-text {
+                font-size: 13px;
             }
 
             .achievements-grid {
                 grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .achievement-box {
+                padding: 12px;
+            }
+
+            .achievement-icon {
+                width: 45px;
+                height: 45px;
+            }
+
+            .achievement-icon img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .achievement-title {
+                font-size: 13px;
+            }
+
+            .achievement-desc {
+                font-size: 11px;
             }
         }
     </style>
