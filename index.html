@@ -76,7 +76,7 @@ button::-moz-focus-inner{border:0;}
 .circle-btn:hover .btn-label{color:#fff;}
 
 /* =============================================
-   PAGE PANELS — fixed header + scrollable body
+   PAGE PANELS
    ============================================= */
 .page-panel{
   position:fixed;inset:0;
@@ -97,21 +97,14 @@ button::-moz-focus-inner{border:0;}
   flex-shrink:0;
 }
 .panel-body{
-  flex:1 1 0;
-  min-height:0;
-  overflow-y:auto;
-  overflow-x:hidden;
+  flex:1 1 0;min-height:0;overflow-y:auto;overflow-x:hidden;
   padding:clamp(14px,2vw,18px) clamp(16px,4vw,40px) clamp(24px,3vw,36px);
-  scrollbar-width:thin;
-  scrollbar-color:rgba(255,100,0,0.55) rgba(255,30,0,0.06);
-  /* Prevent scroll chaining on iOS */
-  -webkit-overflow-scrolling:touch;
-  overscroll-behavior:contain;
+  scrollbar-width:thin;scrollbar-color:rgba(255,100,0,0.55) rgba(255,30,0,0.06);
+  -webkit-overflow-scrolling:touch;overscroll-behavior:contain;
 }
 .panel-body::-webkit-scrollbar{width:5px;}
 .panel-body::-webkit-scrollbar-track{background:rgba(255,40,0,0.05);border-left:1px solid rgba(255,69,0,0.1);}
 .panel-body::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--flame),var(--ember),var(--flame));border-radius:3px;box-shadow:0 0 8px rgba(255,150,0,0.45);}
-.panel-body::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--ember),var(--flame2));}
 
 .panel-icon{font-size:clamp(18px,2.5vw,24px);}
 .panel-title{font-family:'Russo One',sans-serif;font-size:clamp(16px,3.5vw,38px);letter-spacing:clamp(2px,0.5vw,4px);text-transform:uppercase;background:linear-gradient(135deg,var(--warm),var(--flame));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
@@ -187,134 +180,31 @@ button::-moz-focus-inner{border:0;}
 .stage-btn.locked{opacity:0.5;cursor:default;pointer-events:none;}
 
 /* ================================
-   EXPERIENCE — FIXED LAYOUT
+   EXPERIENCE
    ================================ */
-
-/* 
-  FIX: The timeline line and dots scroll WITH content inside panel-body.
-  The vertical line is drawn via border-left on .log-body instead of an 
-  absolutely-positioned ::before on .journal-log — this avoids any 
-  stacking context / scroll position weirdness on mobile.
-*/
-.journal-log{
-  display:flex;
-  flex-direction:column;
-  gap:0;
-}
-
-/* Era stamp row */
-.log-era-stamp{
-  display:flex;align-items:center;gap:12px;
-  margin:20px 0 8px;
-  padding-left:0;
-}
+.journal-log{display:flex;flex-direction:column;gap:0;}
+.log-era-stamp{display:flex;align-items:center;gap:12px;margin:20px 0 8px;padding-left:0;}
 .log-era-stamp:first-child{margin-top:0;}
-.stamp-text{
-  font-family:'Russo One',sans-serif;font-size:9px;
-  letter-spacing:4px;color:rgba(255,107,53,0.55);
-  text-transform:uppercase;white-space:nowrap;
-}
+.stamp-text{font-family:'Russo One',sans-serif;font-size:9px;letter-spacing:4px;color:rgba(255,107,53,0.55);text-transform:uppercase;white-space:nowrap;}
 .stamp-line{flex:1;height:1px;background:linear-gradient(90deg,rgba(255,69,0,0.3),transparent);}
-
-/* Each entry: date column | border | body */
-.log-entry{
-  display:grid;
-  grid-template-columns:clamp(68px,10vw,108px) 1fr;
-  gap:0;
-  position:relative;
-  /* ensure dot sits correctly */
-}
-
-/* Left date column */
-.log-date{
-  padding:18px 14px 18px 0;
-  text-align:right;
-  position:relative;
-  flex-shrink:0;
-  /* The dot hangs off the right edge of this column */
-}
-.log-date-year{
-  font-family:'Russo One',sans-serif;
-  font-size:clamp(11px,1.5vw,13px);
-  color:var(--flame2);letter-spacing:1px;
-  line-height:1;display:block;
-}
-.log-date-range{
-  font-family:'Exo 2',sans-serif;font-size:9px;
-  letter-spacing:1.5px;color:rgba(255,107,53,0.5);
-  text-transform:uppercase;display:block;margin-top:3px;
-}
-
-/*
-  FIX: The dot is now position:absolute relative to .log-date (the grid column).
-  It sits at the right edge, vertically aligned to top of the card.
-  This ensures it scrolls perfectly with its entry.
-*/
-.log-dot{
-  position:absolute;
-  right:-6px;
-  top:22px;
-  width:12px;height:12px;
-  border-radius:50%;
-  background:var(--flame);
-  border:2px solid var(--ember);
-  box-shadow:0 0 10px rgba(255,69,0,0.8);
-  z-index:2;
-  /* Critical: pointer-events none so it doesn't block hover */
-  pointer-events:none;
-}
-.log-entry.current .log-dot{
-  background:var(--ember);
-  animation:dotPulse 2s ease-in-out infinite;
-}
-@keyframes dotPulse{
-  0%,100%{box-shadow:0 0 0 3px rgba(255,215,0,0.2),0 0 16px rgba(255,215,0,0.6);}
-  50%{box-shadow:0 0 0 6px rgba(255,215,0,0.08),0 0 28px rgba(255,215,0,1);}
-}
-
-/* Right body column — uses border-left as the timeline line */
-.log-body{
-  padding:14px 0 14px 24px;
-  display:flex;flex-direction:column;gap:8px;
-  border-left:2px solid rgba(255,69,0,0.25);
-  position:relative;
-}
-/* Make the last entry's line stop at card bottom */
-.log-entry:last-child .log-body{
-  border-left-color:transparent;
-  background:linear-gradient(to bottom,rgba(255,69,0,0.25) 0%,transparent 100%) no-repeat 0 0 / 2px 100%;
-}
-/* Current entry gets amber line */
-.log-entry.current .log-body{
-  border-left-color:rgba(255,215,0,0.4);
-}
-
-/* Card styles */
-.log-card{
-  background:var(--parchment);
-  border:1px solid rgba(255,69,0,0.2);
-  border-left:3px solid transparent;
-  padding:clamp(10px,2vw,14px) clamp(12px,2vw,18px);
-  position:relative;cursor:pointer;
-  transition:all 0.35s cubic-bezier(0.23,1,0.32,1);
-  overflow:hidden;
-  background-image:linear-gradient(rgba(255,200,100,0.03) 1px,transparent 1px);
-  background-size:100% 22px;
-}
+.log-entry{display:grid;grid-template-columns:clamp(68px,10vw,108px) 1fr;gap:0;position:relative;}
+.log-date{padding:18px 14px 18px 0;text-align:right;position:relative;flex-shrink:0;}
+.log-date-year{font-family:'Russo One',sans-serif;font-size:clamp(11px,1.5vw,13px);color:var(--flame2);letter-spacing:1px;line-height:1;display:block;}
+.log-date-range{font-family:'Exo 2',sans-serif;font-size:9px;letter-spacing:1.5px;color:rgba(255,107,53,0.5);text-transform:uppercase;display:block;margin-top:3px;}
+.log-dot{position:absolute;right:-6px;top:22px;width:12px;height:12px;border-radius:50%;background:var(--flame);border:2px solid var(--ember);box-shadow:0 0 10px rgba(255,69,0,0.8);z-index:2;pointer-events:none;}
+.log-entry.current .log-dot{background:var(--ember);animation:dotPulse 2s ease-in-out infinite;}
+@keyframes dotPulse{0%,100%{box-shadow:0 0 0 3px rgba(255,215,0,0.2),0 0 16px rgba(255,215,0,0.6);}50%{box-shadow:0 0 0 6px rgba(255,215,0,0.08),0 0 28px rgba(255,215,0,1);}}
+.log-body{padding:14px 0 14px 24px;display:flex;flex-direction:column;gap:8px;border-left:2px solid rgba(255,69,0,0.25);position:relative;}
+.log-entry:last-child .log-body{border-left-color:transparent;background:linear-gradient(to bottom,rgba(255,69,0,0.25) 0%,transparent 100%) no-repeat 0 0 / 2px 100%;}
+.log-entry.current .log-body{border-left-color:rgba(255,215,0,0.4);}
+.log-card{background:var(--parchment);border:1px solid rgba(255,69,0,0.2);border-left:3px solid transparent;padding:clamp(10px,2vw,14px) clamp(12px,2vw,18px);position:relative;cursor:pointer;transition:all 0.35s cubic-bezier(0.23,1,0.32,1);overflow:hidden;background-image:linear-gradient(rgba(255,200,100,0.03) 1px,transparent 1px);background-size:100% 22px;}
 .log-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,69,0,0.04),transparent 60%);pointer-events:none;}
 .log-card::after{content:'';position:absolute;bottom:0;right:0;width:40px;height:40px;background:radial-gradient(circle at 100% 100%,rgba(255,69,0,0.12),transparent 70%);pointer-events:none;}
 .log-card:hover{border-left-color:var(--flame);background-color:rgba(255,80,0,0.07);transform:translateX(4px);box-shadow:-4px 0 20px rgba(255,69,0,0.15),inset 0 0 30px rgba(255,69,0,0.04);}
 .log-entry.current .log-card{border-left-color:var(--ember);background-color:rgba(255,215,0,0.04);}
 .log-entry.current .log-card:hover{box-shadow:-4px 0 20px rgba(255,215,0,0.2),inset 0 0 30px rgba(255,215,0,0.04);}
 .log-card-head{display:flex;align-items:flex-start;gap:10px;margin-bottom:6px;}
-.log-entry-icon{
-  font-size:clamp(18px,2.5vw,22px);
-  flex-shrink:0;margin-top:1px;
-  filter:drop-shadow(0 0 6px rgba(255,100,0,0.5));
-  /* FIX: explicit line-height so icon doesn't shift */
-  line-height:1;
-  display:block;
-}
+.log-entry-icon{font-size:clamp(18px,2.5vw,22px);flex-shrink:0;margin-top:1px;filter:drop-shadow(0 0 6px rgba(255,100,0,0.5));line-height:1;display:block;}
 .log-entry.current .log-entry-icon{filter:drop-shadow(0 0 8px rgba(255,215,0,0.7));animation:iconGlow 3s ease-in-out infinite;}
 @keyframes iconGlow{0%,100%{filter:drop-shadow(0 0 6px rgba(255,215,0,0.6));}50%{filter:drop-shadow(0 0 14px rgba(255,215,0,1));}}
 .log-entry-meta{flex:1;min-width:0;}
@@ -342,13 +232,7 @@ button::-moz-focus-inner{border:0;}
 /* ================================
    ACHIEVEMENTS
    ================================ */
-.ach-toolbar{
-  display:flex;align-items:center;gap:7px;
-  flex-wrap:wrap;
-  padding-bottom:12px;
-  border-bottom:1px solid rgba(255,69,0,0.14);
-  margin-bottom:16px;
-}
+.ach-toolbar{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding-bottom:12px;border-bottom:1px solid rgba(255,69,0,0.14);margin-bottom:16px;}
 .ach-filter-label{font-family:'Russo One',sans-serif;font-size:8px;letter-spacing:3px;color:rgba(255,107,53,0.38);text-transform:uppercase;white-space:nowrap;}
 .ach-filter-btn{padding:4px 11px;font-family:'Exo 2',sans-serif;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid rgba(255,69,0,0.24);color:var(--silver2);background:rgba(255,69,0,0.03);cursor:pointer;transition:all 0.2s;border-radius:2px;}
 .ach-filter-btn:hover{color:var(--ember);border-color:rgba(255,215,0,0.3);background:rgba(255,215,0,0.05);}
@@ -441,93 +325,62 @@ button::-moz-focus-inner{border:0;}
 .sig-bar:nth-child(4){height:14px;animation-delay:0.3s;}
 @keyframes sigPulse{0%,100%{background:rgba(255,69,0,0.3);}50%{background:rgba(255,215,0,0.8);}}
 
-/* ===== RESPONSIVE — TABLET (max 900px) ===== */
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
-  /* About */
   .about-layout{grid-template-columns:1fr;}
   .char-left{flex-direction:row;align-items:flex-start;gap:16px;flex-wrap:wrap;}
   .avatar-frame{width:clamp(140px,25vw,190px);height:clamp(155px,28vw,210px);}
   .stat-block{flex:1;min-width:180px;}
-
-  /* Projects */
   .stage-card{grid-template-columns:1fr;gap:12px;}
   .stage-action{display:flex;}
-
-  /* Contact */
   .contact-channels{grid-template-columns:repeat(2,1fr);}
   .contact-signal-wrap{display:none;}
-
-  /* Achievements */
   .ach-view-group{margin-left:0;}
 }
-
-/* ===== RESPONSIVE — MOBILE (max 640px) ===== */
 @media(max-width:640px){
-  /* Panel header/body */
   .panel-header{padding:12px 14px 10px;gap:10px;}
   .panel-body{padding:12px 14px 28px;}
   .panel-title{letter-spacing:1px;}
-
-  /* About — stack fully */
   .about-layout{gap:14px;}
   .char-left{flex-direction:column;align-items:stretch;}
   .avatar-frame{width:100%;height:200px;}
   .class-badge{font-size:9px;padding:5px 8px;}
-
-  /* Experience — compact date column */
   .log-entry{grid-template-columns:60px 1fr;}
   .log-date{padding:14px 10px 14px 0;}
-  .log-date-range{display:none;} /* hide date range on small screens */
+  .log-date-range{display:none;}
   .log-body{padding:12px 0 12px 16px;}
   .log-card{padding:10px 12px;}
   .log-card-head{gap:8px;}
   .log-entry-icon{font-size:18px;}
-  .log-status{display:none;} /* hide status badge, keep it clean */
+  .log-status{display:none;}
   .log-era-stamp{margin:14px 0 6px;}
   .stamp-text{font-size:8px;letter-spacing:2.5px;}
-
-  /* Projects */
   .world-banner{flex-direction:column;align-items:flex-start;gap:8px;}
   .world-banner-icon{display:none;}
   .stage-title{font-size:15px;}
   .stage-desc{font-size:12px;}
-
-  /* Contact */
   .contact-hero{flex-direction:column;text-align:center;padding:16px;gap:14px;}
   .contact-badges{justify-content:center;}
   .contact-channels{grid-template-columns:1fr;}
   .ch-icon-wrap{width:44px;height:44px;}
   .ch-icon{font-size:17px;}
-
-  /* Achievements */
   .ach-filter-label{display:none;}
   .ach-view-group{width:100%;justify-content:flex-end;}
   .ach-grid-wrap{grid-template-columns:repeat(auto-fill,minmax(145px,1fr));}
   .ach-toolbar{gap:5px;}
-
-  /* Nav buttons */
-  .circle-nav{gap:8px;}
 }
-
-/* ===== RESPONSIVE — SMALL MOBILE (max 400px) ===== */
 @media(max-width:400px){
   .hero-role{font-size:9px;letter-spacing:0.5px;}
   .circle-nav{gap:6px;}
   .circle-btn{width:64px;}
   .circle-inner{width:54px;height:54px;font-size:18px;}
   .btn-label{font-size:8px;letter-spacing:1px;}
-
-  /* Experience: even more compact */
   .log-entry{grid-template-columns:52px 1fr;}
   .log-body{padding-left:12px;}
   .log-date-year{font-size:10px;}
-
-  /* Contact */
   .contact-name-big{font-size:15px;}
   .contact-subtitle{letter-spacing:1.5px;}
   .contact-badge{font-size:8px;padding:3px 7px;}
-
-  /* Achievements */
   .ach-grid-wrap{grid-template-columns:1fr;}
   .ach-year-col{min-width:160px;}
 }
@@ -589,7 +442,9 @@ button::-moz-focus-inner{border:0;}
           <div class="stat-row"><span class="stat-label">Frontend</span><div class="star-rating" data-pct="80"></div></div>
           <div class="stat-row"><span class="stat-label">Game Dev</span><div class="star-rating" data-pct="85"></div></div>
           <div class="stat-row"><span class="stat-label">Database</span><div class="star-rating" data-pct="75"></div></div>
-          <div class="stat-row"><span class="stat-label">Security</span><div class="star-rating" data-pct="60"></div></div>
+          <div class="stat-row"><span class="stat-label">Networking</span><div class="star-rating" data-pct="70"></div></div>
+          <div class="stat-row"><span class="stat-label">Security</span><div class="star-rating" data-pct="62"></div></div>
+          <div class="stat-row"><span class="stat-label">Hardware</span><div class="star-rating" data-pct="72"></div></div>
         </div>
       </div>
       <div class="char-right">
@@ -597,20 +452,22 @@ button::-moz-focus-inner{border:0;}
           <div class="class-badge"><i class="fas fa-code"></i> Software Engineer</div>
           <div class="class-badge"><i class="fas fa-gamepad"></i> Game Developer</div>
           <div class="class-badge"><i class="fas fa-database"></i> DB Architect</div>
+          <div class="class-badge"><i class="fas fa-network-wired"></i> IT Support</div>
           <div class="class-badge"><i class="fas fa-shield-alt"></i> Cyber Aware</div>
         </div>
         <div class="char-bio">
           <div class="bio-tag">◈ Lore</div>
           <div class="bio-text">
-            I am <span>Alex Ng Wen Jia</span> — a software engineer forging powerful digital experiences through precision code and creative vision. Currently pursuing a <span>Diploma in Software Engineering</span> at TARUMT Sabah.<br><br>
-            From architecting a <span>Minecraft RPG server at age 15</span> to shipping enterprise ticketing platforms — every line of code is written with <span>deliberate intent</span>.
+            I am <span>Alex Ng Wen Jia</span> — a software engineer forging powerful digital experiences through precision code and creative vision. Graduated with a <span>Diploma in Software Engineering</span> from TARUMT Sabah and completed a 5-month industrial internship at <span>IOI Edible Oils Sdn Bhd</span>.<br><br>
+            From architecting a <span>Minecraft RPG server at age 15</span> to shipping QR visitor systems and industrial sensor tools in a live factory environment — every line of code is written with <span>deliberate intent</span>.
           </div>
         </div>
-        <div class="skill-section"><div class="skill-cat-label">◈ Languages</div><div class="skill-tags"><span class="sk lang">C++</span><span class="sk lang">Java</span><span class="sk lang">PHP</span><span class="sk lang">JavaScript</span><span class="sk lang">C#</span><span class="sk lang">HTML5</span><span class="sk lang">CSS3</span><span class="sk lang">SQL</span><span class="sk lang">Python</span><span class="sk lang">XAML</span><span class="sk lang">.NET</span><span class="sk lang">MAUI</span></div></div>
-        <div class="skill-section"><div class="skill-cat-label">◈ Frameworks &amp; Engines</div><div class="skill-tags"><span class="sk fw">Unity 3D</span><span class="sk fw">Bootstrap</span><span class="sk fw">Algorithm</span><span class="sk fw">Pseudocode</span><span class="sk fw">OOP</span><span class="sk fw">Flow Chart</span></div></div>
-        <div class="skill-section"><div class="skill-cat-label">◈ Databases</div><div class="skill-tags"><span class="sk db">MySQL</span><span class="sk db">SQLite</span><span class="sk db">phpMyAdmin</span><span class="sk db">CSV</span><span class="sk db">MS Access</span><span class="sk db">DFD Design</span><span class="sk db">ERD Design</span></div></div>
-        <div class="skill-section"><div class="skill-cat-label">◈ Tools &amp; Platforms</div><div class="skill-tags"><span class="sk tool">Git</span><span class="sk tool">GitHub</span><span class="sk tool">VS Code</span><span class="sk tool">VS Studio</span><span class="sk tool">Eclipse</span><span class="sk tool">Figma</span><span class="sk tool">Cisco</span><span class="sk tool">Linux</span><span class="sk tool">Apache</span><span class="sk tool">draw.io</span><span class="sk tool">ClickUp</span><span class="sk tool">XAMPP</span></div></div>
-        <div class="skill-section"><div class="skill-cat-label">◈ Others</div><div class="skill-tags"><span class="sk tool">Claude</span><span class="sk tool">ChatGPT</span><span class="sk tool">Gemini</span><span class="sk tool">Copilot</span><span class="sk tool">Notepad++</span><span class="sk tool">CapCut</span><span class="sk tool">Filmora</span><span class="sk tool">Cursor</span><span class="sk tool">Aseprite</span><span class="sk tool">3D Print</span><span class="sk tool">TryHackMe</span><span class="sk tool">Virtual Machine</span><span class="sk tool">Microsoft Office</span><span class="sk tool">W3schools</span><span class="sk tool">geeksforgeeks</span></div></div>
+        <div class="skill-section"><div class="skill-cat-label">◈ Languages</div><div class="skill-tags"><span class="sk lang">C++</span><span class="sk lang">Java</span><span class="sk lang">PHP</span><span class="sk lang">JavaScript</span><span class="sk lang">C#</span><span class="sk lang">HTML5</span><span class="sk lang">CSS3</span><span class="sk lang">SQL</span><span class="sk lang">Python</span><span class="sk lang">XAML</span><span class="sk lang">.NET MAUI</span></div></div>
+        <div class="skill-section"><div class="skill-cat-label">◈ Frameworks &amp; Engines</div><div class="skill-tags"><span class="sk fw">Unity 3D</span><span class="sk fw">Bootstrap</span><span class="sk fw">Algorithm</span><span class="sk fw">OOP</span><span class="sk fw">MVC / MVVM</span><span class="sk fw">CRUD</span><span class="sk fw">REST API</span></div></div>
+        <div class="skill-section"><div class="skill-cat-label">◈ Databases</div><div class="skill-tags"><span class="sk db">MySQL</span><span class="sk db">SQLite</span><span class="sk db">phpMyAdmin</span><span class="sk db">CSV</span><span class="sk db">MS Access</span><span class="sk db">ERD Design</span><span class="sk db">DFD Design</span></div></div>
+        <div class="skill-section"><div class="skill-cat-label">◈ Networking &amp; Hardware</div><div class="skill-tags"><span class="sk tool">LAN Crimping</span><span class="sk tool">IP Config</span><span class="sk tool">SCADA</span><span class="sk tool">PLC</span><span class="sk tool">ESP32</span><span class="sk tool">Arduino</span><span class="sk tool">Raspberry Pi</span><span class="sk tool">LoRaWAN</span><span class="sk tool">CCTV</span><span class="sk tool">NFC</span><span class="sk tool">UPS</span><span class="sk tool">3D Printing</span></div></div>
+        <div class="skill-section"><div class="skill-cat-label">◈ Tools &amp; Platforms</div><div class="skill-tags"><span class="sk tool">Git</span><span class="sk tool">GitHub</span><span class="sk tool">VS Code</span><span class="sk tool">VS Studio</span><span class="sk tool">Blender3D</span><span class="sk tool">Figma</span><span class="sk tool">Cisco</span><span class="sk tool">Linux</span><span class="sk tool">Apache / XAMPP</span><span class="sk tool">WAMP</span><span class="sk tool">TeamViewer</span><span class="sk tool">CapCut</span><span class="sk tool">ElevenLabs</span><span class="sk tool">draw.io</span><span class="sk tool">ClickUp</span></div></div>
+        <div class="skill-section"><div class="skill-cat-label">◈ AI &amp; Others</div><div class="skill-tags"><span class="sk tool">Claude</span><span class="sk tool">ChatGPT</span><span class="sk tool">Gemini</span><span class="sk tool">Copilot</span><span class="sk tool">Canva</span><span class="sk tool">Filmora</span><span class="sk tool">Cursor</span><span class="sk tool">Aseprite</span><span class="sk tool">TryHackMe</span><span class="sk tool">Virtual Machine</span><span class="sk tool">Microsoft Office</span></div></div>
       </div>
     </div>
   </div>
@@ -627,19 +484,30 @@ button::-moz-focus-inner{border:0;}
     <div class="mario-worlds">
       <button class="world-tab active" onclick="selectWorld(this,'console')"><span class="w-title">Console</span><span class="w-num">×1</span></button>
       <button class="world-tab" onclick="selectWorld(this,'java')"><span class="w-title">Java</span><span class="w-num">×1</span></button>
-      <button class="world-tab" onclick="selectWorld(this,'web')"><span class="w-title">Web</span><span class="w-num">×1</span></button>
+      <button class="world-tab" onclick="selectWorld(this,'web')"><span class="w-title">Web</span><span class="w-num">×2</span></button>
+      <button class="world-tab" onclick="selectWorld(this,'internship')"><span class="w-title">Internship</span><span class="w-num">×2</span></button>
     </div>
+
     <div class="stage-area active" id="world-console">
       <div class="world-banner"><span class="world-banner-icon">🖥️</span><div><div class="world-banner-name">World 1 — Console Kingdom</div><div class="world-banner-sub">Low-level systems · Terminal mastery · C++ precision</div></div></div>
       <div class="stage-card"><div class="stage-info"><div class="stage-tags"><span class="stage-tag">C++</span><span class="stage-tag">Console</span><span class="stage-tag">OOP</span></div><div class="stage-title">CASA Ordering System</div><div class="stage-desc">High-performance console Fast-Food Ordering System in C++. Features menu navigation, order processing, payment handling, and staff management through an optimized text interface.</div></div><div class="stage-action"><a href="https://github.com/ShiWuuuu/CASA-Ordering-System" target="_blank" class="stage-btn">▶ Play Stage <i class="fas fa-arrow-right"></i></a></div></div>
     </div>
+
     <div class="stage-area" id="world-java">
       <div class="world-banner"><span class="world-banner-icon">☕</span><div><div class="world-banner-name">World 2 — Java Realm</div><div class="world-banner-sub">Object-oriented · Algorithm mastery · Enterprise patterns</div></div></div>
       <div class="stage-card"><div class="stage-info"><div class="stage-tags"><span class="stage-tag">Java</span><span class="stage-tag">OOP</span><span class="stage-tag">Algorithms</span></div><div class="stage-title">Movie Ticketing System</div><div class="stage-desc">Sophisticated Cinema Ticketing Platform with booking algorithms, showtime scheduling, real-time seat reservation, loyalty point system, and analytics dashboard.</div></div><div class="stage-action"><a href="https://github.com/ShiWuuuu/Movie-Ticketing-System-2025" target="_blank" class="stage-btn">▶ Play Stage <i class="fas fa-arrow-right"></i></a></div></div>
     </div>
+
     <div class="stage-area" id="world-web">
       <div class="world-banner"><span class="world-banner-icon">🌐</span><div><div class="world-banner-name">World 3 — Web Frontier</div><div class="world-banner-sub">Full-stack · Real-time systems · Database architecture</div></div></div>
       <div class="stage-card"><div class="stage-info"><div class="stage-tags"><span class="stage-tag">PHP</span><span class="stage-tag">MySQL</span><span class="stage-tag">JavaScript</span></div><div class="stage-title">Facility Booking System</div><div class="stage-desc">Digital sports facility reservation platform with real-time availability, secure auth, automated confirmations, and admin dashboard. Eliminates scheduling conflicts across TARUMT campus.</div></div><div class="stage-action"><span class="stage-btn locked">🔒 In Development</span></div></div>
+      <div class="stage-card"><div class="stage-info"><div class="stage-tags"><span class="stage-tag">HTML</span><span class="stage-tag">CSS</span><span class="stage-tag">JavaScript</span></div><div class="stage-title">Personal Portfolio Website</div><div class="stage-desc">This very site — a fire-themed interactive portfolio with animated intro, charge-ring navigation, scrollable panel system, timeline journal, achievement tracker, and particle fire canvas. Built from scratch with zero frameworks.</div></div><div class="stage-action"><span class="stage-btn locked">🔒 This Site</span></div></div>
+    </div>
+
+    <div class="stage-area" id="world-internship">
+      <div class="world-banner"><span class="world-banner-icon">🏭</span><div><div class="world-banner-name">World 4 — Internship Arsenal</div><div class="world-banner-sub">IOI Edible Oils · Industrial Tools · Real-world deployment</div></div></div>
+      <div class="stage-card"><div class="stage-info"><div class="stage-tags"><span class="stage-tag">JavaScript</span><span class="stage-tag">HTML/CSS</span><span class="stage-tag">QRCode.js</span><span class="stage-tag">jsPDF</span></div><div class="stage-title">QR Code Visitor Check-In System</div><div class="stage-desc">Offline-capable visitor management system with QR code generation, batch printing, admin panel, and multi-department user management. APIs converted to vanilla JS for cybersecurity — no external requests. Deployed at IOI Edible Oils factory gates.</div></div><div class="stage-action"><span class="stage-btn locked">🔒 Company Private</span></div></div>
+      <div class="stage-card"><div class="stage-info"><div class="stage-tags"><span class="stage-tag">PHP</span><span class="stage-tag">NFC</span><span class="stage-tag">Arduino</span><span class="stage-tag">3D Print</span></div><div class="stage-title">NFC Card Check-In-Out System</div><div class="stage-desc">PHP web application with NFC card reader integration for employee attendance. Features CRUD user management, multi-department support, 3D-printed enclosures fabricated in-house, and deployment across multiple plant sites.</div></div><div class="stage-action"><span class="stage-btn locked">🔒 Company Private</span></div></div>
     </div>
   </div>
 </div>
@@ -842,11 +710,83 @@ document.querySelectorAll('.star-rating[data-pct]').forEach(el=>{
 
 /* ===== JOURNAL ===== */
 const JOURNAL_ENTRIES=[
-  {era:'Current Arc',year:'2024',range:'— 2026',icon:'📘',title:'Diploma in Software Engineering',subtitle:'TARUMT Sabah · Year 2 / Active',status:'active',statusLabel:'Active',current:false,notes:['Studying system architecture, agile methodology, software design patterns & DB design.','Active in college tech initiatives — TechTrek volunteer, project leadership roles.','Currently shipping: Facility Booking System (PHP/MySQL) + Java Cinema Ticketing Platform.','Targeting a career in full-stack engineering and indie game dev post-graduation.'],tags:['Full Stack','Agile','System Design','Java','PHP','MySQL','JavaScript']},
-  {era:'Rising',year:'2020',range:'— Present',icon:'🌐',title:'Self-Mastery Track — Web & Cyber',subtitle:'Continuous · Project-based Learning',status:'done',statusLabel:'Ongoing',current:false,notes:['Deep dives into HTML/CSS, JavaScript, PHP, MySQL — built real projects, not tutorials.','Completed Cisco Intro to Cybersecurity certification (2025) — covered threat models & defences.','Every year a new stack, a new challenge. The grind is the point.'],tags:['PHP','MySQL','JavaScript','Cisco','Linux']},
-  {era:'Rising',year:'2021',range:'— 2022',icon:'🕹️',title:'Unity 3D — Indie Game Developer',subtitle:'Solo Project · PC Game Shipped',status:'done',statusLabel:'Shipped',current:false,notes:['Designed and shipped a complete PC game using Unity + C# — fully self-driven production.','Mastered physics systems, player UX, scene management, and asset pipelines.','I could take a project from zero to playable — no team, no deadline, just fire.'],tags:['Unity 3D','C#','Game Physics','UX Design','Solo Dev']},
-  {era:'Origins',year:'2019',range:'— 2021',icon:'🎮',title:'Minecraft RPG Server — Junior Developer',subtitle:'MCLA Server · Self-directed',status:'done',statusLabel:'Completed',current:false,notes:['Engineered a full custom RPG server at age 15 — classes, quest systems, skill trees, live economy.','Managed a live community of active players; handled deploys, bug fixes & balance patches.','First real taste of building something people actually use. Everything clicked here.'],tags:['Java','Server Admin','Game Design','Community']},
-  {era:'Origins',year:'2018',range:'— 2022',icon:'🎓',title:'Computer Science — High School',subtitle:'Secondary School Sung Siew · Sabah, Malaysia',status:'done',statusLabel:'Completed',current:false,notes:['Built strong foundations: algorithms, OOP, database design & network basics.','Graduated with Grade A in Computer Science (SPM) after focused self-study.','First exposure to structured programming — ignited a lifelong obsession with code.'],tags:['Algorithms','OOP','Database','Networking']},
+  {
+    era:'Internship Arc',year:'2026',range:'Jan — May',icon:'🏭',
+    title:'IT Intern — IOI Edible Oils Sdn Bhd',
+    subtitle:'Industrial Internship · 5 Months · Kota Kinabalu, Sabah',
+    status:'done',statusLabel:'Completed',current:false,
+    notes:[
+      'Built and deployed a QR Code Visitor Check-In System using JavaScript with offline-capable APIs (QRCode.js, jsPDF, html2canvas) for company cybersecurity compliance.',
+      'Developed a PHP-based NFC Card Check-In-Out System with CRUD admin panel, multi-department user management, and 3D-printed enclosures fabricated in-house.',
+      'Hardware support: CPU/monitor/RAM/UPS/printer maintenance, LAN cable crimping, CCTV installation & troubleshooting, and workstation assembly across multiple plant sites.',
+      'Network infrastructure: IP configuration, proxy server setup, LoRa router installation, WiFi access point deployment, fiber optic splicing, and SCADA system networking.',
+      'Embedded systems: ESP32, Arduino, Raspberry Pi, NFC, LoRaWAN sensor installations, 3D printing enclosures using Blender3D/Creality Ender 3 V3.',
+      'Video production: filmed, edited, and delivered corporate videos using CapCut, Canva, ElevenLabs AI voice; used Speech-to-Text/Text-to-Speech for multi-language subtitles (English, Malay, Chinese, Korean, Japanese); presented to Tan Sri VIP guests.',
+      'Self-directed learning: C# .NET MAUI, ladder diagrams, MVC/MVVM patterns, TryHackMe cybersecurity, Nmap, Blender3D, drone operation.',
+    ],
+    tags:['PHP','JavaScript','NFC','Arduino','ESP32','Raspberry Pi','LoRaWAN','SCADA','PLC','3D Printing','CCTV','LAN','CapCut','ElevenLabs','Blender3D','.NET MAUI']
+  },
+  {
+    era:'Current Arc',year:'2024',range:'— 2026',icon:'📘',
+    title:'Diploma in Software Engineering',
+    subtitle:'TARUMT Sabah · Graduated 2026',
+    status:'done',statusLabel:'Graduated',current:false,
+    notes:[
+      'Studied system architecture, agile methodology, software design patterns & DB design.',
+      'Active in college tech initiatives — TechTrek volunteer, project leadership roles.',
+      'Shipped: Facility Booking System (PHP/MySQL) + Java Cinema Ticketing Platform.',
+      'Graduated and received Diploma in Software Engineering certificate.',
+    ],
+    tags:['Full Stack','Agile','System Design','Java','PHP','MySQL','JavaScript']
+  },
+  {
+    era:'Rising',year:'2020',range:'— Present',icon:'🌐',
+    title:'Self-Mastery Track — Web & Cyber',
+    subtitle:'Continuous · Project-based Learning',
+    status:'done',statusLabel:'Ongoing',current:false,
+    notes:[
+      'Deep dives into HTML/CSS, JavaScript, PHP, MySQL — built real projects, not tutorials.',
+      'Completed Cisco Intro to Cybersecurity certification (2025) — covered threat models & defences.',
+      'Every year a new stack, a new challenge. The grind is the point.',
+    ],
+    tags:['PHP','MySQL','JavaScript','Cisco','Linux']
+  },
+  {
+    era:'Rising',year:'2021',range:'— 2022',icon:'🕹️',
+    title:'Unity 3D — Indie Game Developer',
+    subtitle:'Solo Project · PC Game Shipped',
+    status:'done',statusLabel:'Shipped',current:false,
+    notes:[
+      'Designed and shipped a complete PC game using Unity + C# — fully self-driven production.',
+      'Mastered physics systems, player UX, scene management, and asset pipelines.',
+      'Could take a project from zero to playable — no team, no deadline, just fire.',
+    ],
+    tags:['Unity 3D','C#','Game Physics','UX Design','Solo Dev']
+  },
+  {
+    era:'Origins',year:'2019',range:'— 2021',icon:'🎮',
+    title:'Minecraft RPG Server — Junior Developer',
+    subtitle:'MCLA Server · Self-directed',
+    status:'done',statusLabel:'Completed',current:false,
+    notes:[
+      'Engineered a full custom RPG server at age 15 — classes, quest systems, skill trees, live economy.',
+      'Managed a live community of active players; handled deploys, bug fixes & balance patches.',
+      'First real taste of building something people actually use. Everything clicked here.',
+    ],
+    tags:['Java','Server Admin','Game Design','Community']
+  },
+  {
+    era:'Origins',year:'2018',range:'— 2022',icon:'🎓',
+    title:'Computer Science — High School',
+    subtitle:'Secondary School Sung Siew · Sabah, Malaysia',
+    status:'done',statusLabel:'Completed',current:false,
+    notes:[
+      'Built strong foundations: algorithms, OOP, database design & network basics.',
+      'Graduated with Grade A in Computer Science (SPM) after focused self-study.',
+      'First exposure to structured programming — ignited a lifelong obsession with code.',
+    ],
+    tags:['Algorithms','OOP','Database','Networking']
+  },
 ];
 
 (function buildJournal(){
@@ -893,9 +833,7 @@ function toggleEntry(card){
   if(h)h.textContent=e?'tap to close':'tap to read entry';
 }
 
-/* =============================================
-   ACHIEVEMENTS
-   ============================================= */
+/* ===== ACHIEVEMENTS ===== */
 const ACHIEVEMENTS=[
   {year:2018,emoji:'🎓',name:'Academic Excellence',detail:'Grade A · Computer Science SPM',badge:'academic',label:'Academic'},
   {year:2019,emoji:'🎮',name:'Minecraft Dev',detail:'MCLA Server · Junior Developer',badge:'dev',label:'Dev'},
@@ -913,12 +851,18 @@ const ACHIEVEMENTS=[
   {year:2025,emoji:'🥇',name:'Gold Award',detail:'Soft Skills Competency · TARUMT',badge:'award',label:'Gold'},
   {year:2025,emoji:'🔐',name:'Cybersecurity Cert',detail:'Cisco Intro to Cybersecurity',badge:'cert',label:'Cert'},
   {year:2025,emoji:'☕',name:'Cinema Ticketing',detail:'Java OOP Individual Project',badge:'dev',label:'Dev'},
-  {year:2026,emoji:'🏭',name:'Internship',detail:'IOI Edible Oils Sdn Bhd',badge:'dev',label:'Work'},
+  {year:2026,emoji:'🏭',name:'Internship Completed',detail:'IOI Edible Oils Sdn Bhd · 5 Months',badge:'dev',label:'Work'},
   {year:2026,emoji:'🎓',name:'TARUMT Graduated',detail:'TARUMT Sabah Branch',badge:'academic',label:'Academic'},
   {year:2026,emoji:'📜',name:'Diploma Cert',detail:'Diploma in Software Engineering',badge:'cert',label:'Cert'},
-  {year:2026,emoji:'🖨️',name:'3D Printing',detail:'3D Printing Skills & Projects',badge:'dev',label:'Dev'},
+  {year:2026,emoji:'🖨️',name:'3D Printing',detail:'Fabricated Industrial Enclosures',badge:'dev',label:'Dev'},
+  {year:2026,emoji:'📱',name:'QR Visitor System',detail:'Deployed at IOI Factory · JavaScript',badge:'dev',label:'Dev'},
+  {year:2026,emoji:'🏷️',name:'NFC Check-In System',detail:'Multi-site PHP + NFC Deployment',badge:'dev',label:'Dev'},
+  {year:2026,emoji:'🎬',name:'Corporate Video',detail:'Presented to Tan Sri VIP Guests',badge:'award',label:'Award'},
+  {year:2026,emoji:'🌐',name:'Multi-language AI',detail:'Subtitle Translation · 5 Languages',badge:'dev',label:'Dev'},
+  {year:2026,emoji:'🔌',name:'Network Infrastructure',detail:'LAN, CCTV, LoRa, ESP32 Deployments',badge:'dev',label:'Dev'},
+  {year:2026,emoji:'🚁',name:'Drone Operations',detail:'Drone Flying & Video Recording',badge:'dev',label:'Dev'},
   {year:2026,emoji:'💰',name:'Passive Income',detail:'Getting Started Passive Income',badge:'biz',label:'Biz'},
-  {year:2026,emoji:'📱',name:'Business Social Media',detail:'Started Business Social Media',badge:'biz',label:'Biz'},
+  {year:2026,emoji:'📣',name:'Business Social Media',detail:'Started Business Social Media',badge:'biz',label:'Biz'},
 ];
 
 const BADGE_CONFIG={
@@ -973,13 +917,21 @@ function renderAch(){
   else{
     const byYear={};
     filtered.forEach(a=>{(byYear[a.year]=byYear[a.year]||[]).push(a);});
+    const CHUNK=5;
     Object.keys(byYear).sort((a,b)=>+a-+b).forEach(yr=>{
-      const items=byYear[yr],n=items.length;
-      const col=document.createElement('div');col.className='ach-year-col';
-      col.innerHTML=`<div class="ach-year-header">${yr}<span>${n} unlock${n!==1?'s':''}</span></div><div class="ach-items"></div>`;
-      const list=col.querySelector('.ach-items');
-      items.forEach(a=>list.appendChild(makeAchCard(a)));
-      tl.appendChild(col);
+      const items=byYear[yr];
+      const totalCount=items.length;
+      const numChunks=Math.ceil(totalCount/CHUNK);
+      for(let ci=0;ci<totalCount;ci+=CHUNK){
+        const chunk=items.slice(ci,ci+CHUNK);
+        const isFirst=ci===0;
+        const partLabel=numChunks>1?' ('+(Math.floor(ci/CHUNK)+1)+'/'+numChunks+')':'';
+        const col=document.createElement('div');col.className='ach-year-col';
+        col.innerHTML=`<div class="ach-year-header">${yr}${partLabel}<span>${isFirst?totalCount+' unlock'+(totalCount!==1?'s':''):''}</span></div><div class="ach-items"></div>`;
+        const list=col.querySelector('.ach-items');
+        chunk.forEach(a=>list.appendChild(makeAchCard(a)));
+        tl.appendChild(col);
+      }
     });
   }
   const grid=document.getElementById('achGrid');
